@@ -1,7 +1,12 @@
+import { Navbar } from "@/components/navbar"
+
 export default function Page() {
   return (
-    <main>
-      <h1>Creopath</h1>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <h1>Creopath</h1>
+      </main>
+    </>
   )
 }
