@@ -5,6 +5,7 @@ import { Services } from "@/components/services"
 import { HowItWorks } from "@/components/how-it-works"
 import { About } from "@/components/about"
 import { FAQ } from "@/components/faq"
+import { Contact } from "@/components/contact"
 
 export default function Page() {
   return (
@@ -17,6 +18,7 @@ export default function Page() {
         <HowItWorks />
         <About />
         <FAQ />
+        <Contact />
       </main>
     </>
   )
