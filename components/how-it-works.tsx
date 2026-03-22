@@ -38,7 +38,7 @@ const item = {
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="border-y border-border bg-card px-6 py-24">
+    <section id="how-it-works" className="bg-brand-grey px-6 py-24">
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,10 +46,10 @@ export function HowItWorks() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <p className="text-sm font-semibold tracking-wide text-primary">
+          <p className="text-sm font-semibold tracking-wide text-brand-red">
             How It Works
           </p>
-          <h2 className="mt-2 font-heading text-3xl font-bold text-foreground sm:text-4xl">
+          <h2 className="mt-2 font-heading text-3xl font-bold text-white sm:text-4xl">
             Three simple steps to get started
           </h2>
         </motion.div>
@@ -63,13 +63,13 @@ export function HowItWorks() {
         >
           {steps.map((step) => (
             <motion.li key={step.number} variants={item} className="relative">
-              <span className="font-heading text-5xl font-bold text-primary/10">
+              <span className="font-heading text-5xl font-bold text-brand-red">
                 {step.number}
               </span>
-              <h3 className="mt-4 font-heading text-xl font-semibold text-foreground">
+              <h3 className="mt-4 font-heading text-xl font-semibold text-white">
                 {step.title}
               </h3>
-              <p className="mt-3 leading-relaxed text-muted-foreground">
+              <p className="mt-3 leading-relaxed text-white/70">
                 {step.description}
               </p>
             </motion.li>

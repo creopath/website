@@ -2,6 +2,14 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@theme {
+    --color-brand-purple: #3C1874;
+    --color-brand-grey: #283747;
+    --color-brand-red: #DE354C;
+    --color-brand-deep-red: #932432;
+    --color-brand-cloud: #F3F3F3;
+}
+
 @theme inline {
     --font-heading: var(--font-heading);
     --font-sans: var(--font-sans);

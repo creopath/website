@@ -35,8 +35,8 @@ export function About() {
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               Based in London, we combine personal expertise with AI-powered
               insights to help individuals from around the world — particularly
-              those in India, Turkey, and beyond — navigate their path to the
-              UK and global opportunities.
+              those in India, Turkey, and beyond — navigate their path to the UK
+              and global opportunities.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               We&apos;re a small, dedicated team. When you work with us, you
@@ -74,8 +74,11 @@ export function About() {
                   "From your first consultation to settling in, we're with you throughout.",
               },
             ].map((item) => (
-              <div key={item.title} className="rounded-lg bg-card p-5 border border-border">
-                <h3 className="font-heading text-sm font-semibold text-foreground">
+              <div
+                key={item.title}
+                className="rounded-lg bg-white p-5 shadow-md"
+              >
+                <h3 className="font-heading text-sm font-semibold text-brand-deep-red">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

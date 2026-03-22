@@ -46,7 +46,11 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-10 flex flex-col gap-4 sm:flex-row"
           >
-            <Button asChild size="lg">
+            <Button
+              asChild
+              size="lg"
+              className="bg-brand-red hover:bg-brand-deep-red"
+            >
               <Link href="#contact">
                 Book a Free Consultation
                 <ArrowRight data-icon="inline-end" />

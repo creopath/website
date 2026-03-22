@@ -70,10 +70,10 @@ export function Services() {
             <motion.article
               key={service.title}
               variants={item}
-              className="rounded-xl border border-border bg-card p-8 transition-shadow hover:shadow-lg"
+              className="rounded-xl bg-white p-8 shadow-md transition-shadow hover:shadow-xl"
             >
-              <div className="flex size-12 items-center justify-center rounded-lg bg-primary/10">
-                <service.icon className="size-6 text-primary" />
+              <div className="flex size-12 items-center justify-center rounded-lg bg-brand-red/10">
+                <service.icon className="size-6 text-brand-red" />
               </div>
               <h3 className="mt-6 font-heading text-xl font-semibold text-foreground">
                 {service.title}

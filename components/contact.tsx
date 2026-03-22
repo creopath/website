@@ -95,7 +95,7 @@ export function Contact() {
           >
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-6 rounded-xl border border-border bg-card p-8"
+              className="space-y-6 rounded-xl bg-white p-8 shadow-lg"
             >
               <FieldGroup>
                 <div className="grid gap-6 sm:grid-cols-2">
