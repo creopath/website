@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { Stats } from "@/components/stats"
+import { Services } from "@/components/services"
 
 export default function Page() {
   return (
@@ -9,6 +10,7 @@ export default function Page() {
       <main>
         <Hero />
         <Stats />
+        <Services />
       </main>
     </>
   )
