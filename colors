@@ -1,0 +1,14 @@
+- #3C1874: oklch(0.3237 0.145 294.63) (brand purple)
+- #283747: oklch(0.3307 0.0347 250.52) (brand grey)
+- #DE354C: oklch(0.5962 0.2036 19.01) (brand red)
+- #932432: oklch(0.4435 0.1459 18.8) (brand deep red)
+- #F3F3F3: oklch(0.9642 0 0) (brand cloud)
+
+And for the derived theme colors I'll also need:
+
+- #FFFFFF: oklch(1 0 0) (white — for cards, popovers)
+- #E8E0F0: oklch(0.9177 0.0231 308.18) (light purple — for secondary/accent)
+- #E9EAEC: oklch(0.9368 0.0029 264.54) (light grey — for muted)
+- #5A6677: oklch(0.5064 0.0309 257.08) (medium grey — for muted foreground)
+- #D5D8DC: oklch(0.8811 0.0064 255.48) (border grey — for border/input)
+- #5B2D9E: oklch(0.4234 0.1721 297.01) (lighter purple — for chart-5)
