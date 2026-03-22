@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero"
 import { Stats } from "@/components/stats"
 import { Services } from "@/components/services"
 import { HowItWorks } from "@/components/how-it-works"
+import { About } from "@/components/about"
 
 export default function Page() {
   return (
@@ -13,6 +14,7 @@ export default function Page() {
         <Stats />
         <Services />
         <HowItWorks />
+        <About />
       </main>
     </>
   )
