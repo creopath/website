@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 const navigation = [
   { label: "Services", href: "#services" },
@@ -10,15 +11,35 @@ const navigation = [
 
 export function Footer() {
   return (
-    <footer className="bg-brand-grey px-6 py-12">
-      <div className="mx-auto max-w-7xl">
+    <footer className=" overflow-hidden px-4 pb-4">
+      <div className="relative overflow-hidden rounded-2xl px-8 pb-8 pt-12 sm:px-12 lg:px-16">
+      {/* Background video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 h-full w-full object-cover"
+        aria-hidden="true"
+      >
+        <source src="/videos/London_Dark_City.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-brand-grey/80" />
+
+      {/* Content */}
+      <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <Link
-              href="/"
-              className="font-heading text-xl font-bold text-white"
-            >
-              Creopath
+            <Link href="/">
+              <Image
+                src="/images/White-Horizontal.svg"
+                alt="Creopath"
+                width={140}
+                height={38}
+              />
             </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/60">
               AI-powered career guidance and education advisory. Helping you
@@ -57,9 +78,7 @@ export function Footer() {
                   hello@creopath.com
                 </a>
               </p>
-              <p className="text-sm text-white/60">
-                London, United Kingdom
-              </p>
+              <p className="text-sm text-white/60">London, United Kingdom</p>
             </address>
           </div>
         </div>
@@ -69,6 +88,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Creopath. All rights reserved.
           </p>
         </div>
+      </div>
       </div>
     </footer>
   )

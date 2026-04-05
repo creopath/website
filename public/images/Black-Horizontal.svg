@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236.24 64.31">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        font-family: NunitoSans-Regular, 'Nunito Sans';
+        font-size: 37.81px;
+      }
+    </style>
+  </defs>
+  <g id="SLIDE_1" data-name="SLIDE 1">
+    <g>
+      <g>
+        <path d="M39.19,20.56c-5.21-3.14-11.6-2.38-15.87,1.32-4.6,3.99-5.94,10.39-3.56,15.71,2.51,5.64,8.2,8.75,14.31,8.01,6.41-.96,11.64-6.51,11.6-13.12-.05-8.44,3.87-16.28,11.23-20.86C46.06-1.41,27.24-3.67,13.74,5.8S-4.04,33.98,4.41,48.39s26.63,19.99,41.67,12.73c15.11-7.29,22.17-24.88,16-40.79-4.25,2.6-6.3,7.25-6.32,11.94-.05,14.87-13.53,25.74-27.85,23.12-14.47-2.65-22.95-17.61-17.95-31.35C15,10.21,31.31,4.31,44.14,11.76c-2.13,2.72-3.76,5.62-4.96,8.8Z"/>
+        <path d="M77.89,7.08l-6.57,17.35c-.19.49-1.12.09-1.12.09,0,0-.39-4.75-3.93-11.24-3.02-5.53-7.81-9.09-7.81-9.09-.26-.45.12-1.01.64-.92l18.31,2.98c.39.06.62.47.48.83Z"/>
+      </g>
+      <g>
+        <text class="cls-2" transform="translate(77.93 44.8)"><tspan x="0" y="0">C</tspan><tspan class="cls-1" x="25.6" y="0">r</tspan><tspan x="38.56" y="0">eo</tspan></text>
+        <g>
+          <text class="cls-2" transform="translate(159.87 44.8)"><tspan x="0" y="0">path</tspan></text>
+          <text class="cls-2" transform="translate(159.87 44.8)"><tspan x="0" y="0">path</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
