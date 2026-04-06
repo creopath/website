@@ -42,7 +42,7 @@ const itemVariants = {
   },
 }
 
-export function MobileMenu({
+export default function MobileMenu({
   isOpen,
   onClose,
 }: {
@@ -111,11 +111,10 @@ export function MobileMenu({
               />
             </Link>
             <Button
-              variant="ghost"
               size="icon"
               onClick={onClose}
               aria-label="Close menu"
-              className="cursor-pointer bg-brand-cloud hover:bg-brand-cloud/80!"
+              className="cursor-pointer text-foreground bg-brand-cloud hover:bg-brand-cloud/80"
             >
               <X />
             </Button>
@@ -136,7 +135,7 @@ export function MobileMenu({
                 <Link
                   href={link.href}
                   onClick={handleLinkClick}
-                  className="font-heading text-3xl font-bold text-foreground transition-colors hover:text-brand-deep-red"
+                  className="font-heading text-3xl font-bold transition-colors hover:text-brand-deep-red"
                 >
                   {link.label}
                 </Link>

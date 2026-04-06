@@ -6,7 +6,7 @@ import { motion } from "motion/react"
 import { ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export function Hero() {
+export default function Hero() {
   return (
     <section className="relative flex min-h-[calc(100svh-var(--navbar-height))] items-center overflow-hidden px-6">
       <div className="mx-auto w-full max-w-7xl">
@@ -25,7 +25,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="mt-4 font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+              className="mt-4 font-heading text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
             >
               Your <span className="text-brand-deep-red">career journey,</span>{" "}
               <span className="text-primary">guided by experts.</span>
@@ -35,7 +35,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-6 text-lg leading-relaxed text-muted-foreground"
+              className="mt-6 text-lg leading-relaxed"
             >
               We help individuals make informed career, education, and life
               decisions. From study-abroad planning to personalised career

@@ -2,31 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "motion/react"
-import { GraduationCap, Compass, TrendingUp } from "lucide-react"
-
-const services = [
-  {
-    icon: Compass,
-    title: "Career Counselling",
-    description:
-      "Get personalised career guidance tailored to your goals, strengths, and aspirations. We help you navigate decisions with clarity and confidence.",
-    image: "/images/career-counselling.jpg",
-  },
-  {
-    icon: GraduationCap,
-    title: "Study Abroad & Admissions",
-    description:
-      "From choosing the right university in the UK to securing your admission, we guide you through every step of the study-abroad journey.",
-    image: "/images/study-abroad-admissions.jpg",
-  },
-  {
-    icon: TrendingUp,
-    title: "Skill Development & Planning",
-    description:
-      "Build a roadmap for your professional growth. We identify skill gaps and create actionable plans to help you reach your career goals.",
-    image: "/images/skill-dev-planning.jpg",
-  },
-]
+import { services } from "@/lib/constants/services"
 
 const container = {
   hidden: { opacity: 0 },
@@ -41,7 +17,7 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 }
 
-export function Services() {
+export default function Services() {
   return (
     <section id="services" className="px-6 py-24">
       <div className="mx-auto max-w-7xl">
@@ -57,7 +33,7 @@ export function Services() {
           <h2 className="mt-2 font-heading text-3xl font-bold text-brand-deep-red sm:text-4xl">
             Services tailored to your journey
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-foreground">
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed">
             Whether you&apos;re planning to study abroad, switching careers, or
             building new skills, we provide the expert guidance you need.
           </p>

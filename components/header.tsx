@@ -5,10 +5,10 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { MobileMenu } from "@/components/mobile-menu"
+import MobileMenu from "@/components/mobile-menu"
 import { navLinks } from "@/lib/constants/nav"
 
-export function Navbar() {
+export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (

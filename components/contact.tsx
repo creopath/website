@@ -1,65 +1,10 @@
 "use client"
 
-import { useState } from "react"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Controller, useForm } from "react-hook-form"
 import { motion } from "motion/react"
-import { Mail, MapPin, Send } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
+import ContactForm from "@/components/contact-form"
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import {
-  Field,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-} from "@/components/ui/field"
-import { contactSchema, type ContactFormValues } from "@/lib/schemas/contact"
-
-export function Contact() {
-  const [submitError, setSubmitError] = useState<string | null>(null)
-
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-  })
-
-  const { isSubmitting, isSubmitSuccessful } = form.formState
-
-  async function onSubmit(data: ContactFormValues) {
-    setSubmitError(null)
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
-
-      if (!response.ok) {
-        const payload = (await response
-          .json()
-          .catch(() => null)) as { error?: string } | null
-        throw new Error(
-          payload?.error ?? "Something went wrong. Please try again."
-        )
-      }
-    } catch (error) {
-      const message =
-        error instanceof Error
-          ? error.message
-          : "Something went wrong. Please try again."
-      setSubmitError(message)
-      // Re-throw so React Hook Form doesn't mark as successful
-      throw error
-    }
-  }
-
+export default function Contact() {
   return (
     <section id="contact" className="px-6 py-24">
       <div className="mx-auto max-w-7xl">
@@ -70,13 +15,11 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-lg font-bold tracking-wide text-brand-grey">
-              Get In Touch
-            </p>
+            <p className="text-lg font-bold tracking-wide">Get In Touch</p>
             <h2 className="mt-2 font-heading text-3xl font-bold text-brand-deep-red sm:text-4xl">
               Ready to take the next step?
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-foreground">
+            <p className="mt-4 text-lg leading-relaxed">
               Book a free consultation and let&apos;s discuss how we can help
               you achieve your career and education goals.
             </p>
@@ -85,9 +28,7 @@ export function Contact() {
               <div className="flex items-center gap-4">
                 <Mail className="size-6 shrink-0 text-brand-deep-red" />
                 <div>
-                  <p className="font-heading text-sm font-semibold text-foreground">
-                    Email
-                  </p>
+                  <p className="font-heading text-sm font-semibold">Email</p>
                   <a
                     href="mailto:hello@creopath.com"
                     className="text-base text-muted-foreground transition-colors hover:text-brand-deep-red"
@@ -99,7 +40,7 @@ export function Contact() {
               <div className="flex items-center gap-4">
                 <MapPin className="size-6 shrink-0 text-brand-deep-red" />
                 <div>
-                  <p className="font-heading text-sm font-semibold text-foreground">
+                  <p className="font-heading text-sm font-semibold">
                     Location
                   </p>
                   <p className="text-base text-muted-foreground">
@@ -116,168 +57,7 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-8 rounded-2xl bg-brand-deep-red p-8 sm:p-10"
-            >
-              <FieldGroup>
-                <div className="grid gap-7 sm:grid-cols-2">
-                  <Controller
-                    name="name"
-                    control={form.control}
-                    render={({ field, fieldState }) => (
-                      <Field data-invalid={fieldState.invalid || undefined}>
-                        <FieldLabel
-                          htmlFor="contact-name"
-                          className="text-white font-bold"
-                        >
-                          Name
-                        </FieldLabel>
-                        <Input
-                          {...field}
-                          id="contact-name"
-                          placeholder="Your name"
-                          autoComplete="name"
-                          aria-invalid={fieldState.invalid}
-                          className="bg-white! text-foreground placeholder:text-muted-foreground focus-visible:border-input focus-visible:ring-white/30"
-                        />
-                        {fieldState.invalid && (
-                          <FieldError
-                            errors={[fieldState.error]}
-                            className="text-white"
-                          />
-                        )}
-                      </Field>
-                    )}
-                  />
-                  <Controller
-                    name="email"
-                    control={form.control}
-                    render={({ field, fieldState }) => (
-                      <Field data-invalid={fieldState.invalid || undefined}>
-                        <FieldLabel
-                          htmlFor="contact-email"
-                          className="text-white font-bold"
-                        >
-                          Email
-                        </FieldLabel>
-                        <Input
-                          {...field}
-                          id="contact-email"
-                          type="email"
-                          placeholder="you@example.com"
-                          autoComplete="email"
-                          aria-invalid={fieldState.invalid}
-                          className="bg-white! text-foreground placeholder:text-muted-foreground focus-visible:border-input focus-visible:ring-white/30"
-                        />
-                        {fieldState.invalid && (
-                          <FieldError
-                            errors={[fieldState.error]}
-                            className="text-white"
-                          />
-                        )}
-                      </Field>
-                    )}
-                  />
-                </div>
-
-                <Controller
-                  name="subject"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid || undefined}>
-                      <FieldLabel
-                        htmlFor="contact-subject"
-                        className="text-white font-bold"
-                      >
-                        Subject
-                      </FieldLabel>
-                      <Input
-                        {...field}
-                        id="contact-subject"
-                        placeholder="How can we help?"
-                        aria-invalid={fieldState.invalid}
-                        className="bg-white! text-foreground placeholder:text-muted-foreground focus-visible:border-input focus-visible:ring-white/30"
-                      />
-                      {fieldState.invalid && (
-                        <FieldError
-                          errors={[fieldState.error]}
-                          className="text-white"
-                        />
-                      )}
-                    </Field>
-                  )}
-                />
-
-                <Controller
-                  name="message"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field data-invalid={fieldState.invalid || undefined}>
-                      <FieldLabel
-                        htmlFor="contact-message"
-                        className="text-white font-bold"
-                      >
-                        Message
-                      </FieldLabel>
-                      <Textarea
-                        {...field}
-                        id="contact-message"
-                        placeholder="Tell us about your goals..."
-                        rows={5}
-                        aria-invalid={fieldState.invalid}
-                        className="bg-white! text-foreground placeholder:text-muted-foreground focus-visible:border-input focus-visible:ring-white/30"
-                      />
-                      {fieldState.invalid && (
-                        <FieldError
-                          errors={[fieldState.error]}
-                          className="text-white"
-                        />
-                      )}
-                    </Field>
-                  )}
-                />
-              </FieldGroup>
-
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full cursor-pointer bg-white text-brand-deep-red hover:bg-brand-cloud"
-                disabled={isSubmitting || isSubmitSuccessful}
-              >
-                {isSubmitting && "Sending..."}
-                {isSubmitSuccessful && "Message Sent!"}
-                {!isSubmitting && !isSubmitSuccessful && (
-                  <>
-                    Send Message
-                    <Send
-                      data-icon="inline-end"
-                      className="transition-transform duration-300 group-hover/button:-translate-y-0.5 group-hover/button:translate-x-0.5"
-                    />
-                  </>
-                )}
-              </Button>
-
-              {isSubmitSuccessful && (
-                <p
-                  className="text-center text-sm text-white"
-                  role="status"
-                  aria-live="polite"
-                >
-                  Thank you! We&apos;ll get back to you shortly.
-                </p>
-              )}
-
-              {submitError && !isSubmitting && (
-                <p
-                  className="text-center text-sm text-white"
-                  role="alert"
-                  aria-live="assertive"
-                >
-                  {submitError}
-                </p>
-              )}
-            </form>
+            <ContactForm />
           </motion.div>
         </div>
       </div>

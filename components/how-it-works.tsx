@@ -1,27 +1,7 @@
 "use client"
 
 import { motion } from "motion/react"
-
-const steps = [
-  {
-    number: "01",
-    title: "Book a Consultation",
-    description:
-      "Schedule a free introductory call. We'll learn about your goals, background, and where you want to be.",
-  },
-  {
-    number: "02",
-    title: "Get Your Personalised Plan",
-    description:
-      "We create a tailored roadmap covering education pathways, career options, and actionable next steps.",
-  },
-  {
-    number: "03",
-    title: "Receive Ongoing Support",
-    description:
-      "From applications to interviews, we guide you through every milestone until you reach your destination.",
-  },
-]
+import { steps } from "@/lib/constants/steps"
 
 const container = {
   hidden: { opacity: 0 },
@@ -36,7 +16,7 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 }
 
-export function HowItWorks() {
+export default function HowItWorks() {
   return (
     <section id="how-it-works" className="px-4 py-24">
       <div className="mx-auto max-w-7xl">
@@ -44,7 +24,7 @@ export function HowItWorks() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="overflow-hidden rounded-2xl bg-brand-grey px-8 pb-8 pt-12 sm:px-12 lg:px-16"
+          className="overflow-hidden rounded-2xl bg-brand-grey px-8 pb-8 pt-12 sm:px-12 sm:pb-12 lg:px-16 lg:pb-16"
         >
           <div className="text-center">
             <p className="text-lg font-bold tracking-wide text-brand-red">

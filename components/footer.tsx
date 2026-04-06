@@ -1,18 +1,11 @@
 import Link from "next/link"
 import Image from "next/image"
+import { navLinks } from "@/lib/constants/nav"
 
-const navigation = [
-  { label: "Services", href: "#services" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "About", href: "#about" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
-]
-
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className=" overflow-hidden px-4 pb-4">
-      <div className="relative overflow-hidden rounded-2xl px-8 pb-8 pt-12 sm:px-12 lg:px-16">
+    <footer className="overflow-hidden px-4 pb-4">
+      <div className="relative overflow-hidden rounded-2xl px-8 pb-8 pt-12 sm:px-12 sm:pb-12 lg:px-16 lg:pb-16">
       {/* Background video */}
       <video
         autoPlay
@@ -31,28 +24,28 @@ export function Footer() {
 
       {/* Content */}
       <div className="relative mx-auto max-w-7xl">
-        <div className="grid gap-8 md:grid-cols-3">
-          <div>
-            <Link href="/">
-              <Image
-                src="/images/White-Symbol.svg"
-                alt="Creopath"
-                width={48}
-                height={48}
-              />
-            </Link>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/60">
-              AI-powered career guidance and education advisory. Helping you
-              make informed decisions for your future.
-            </p>
-          </div>
+        <div>
+          <Link href="/">
+            <Image
+              src="/images/White-Symbol.svg"
+              alt="Creopath"
+              width={48}
+              height={48}
+            />
+          </Link>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/60">
+            AI-powered career guidance and education advisory. Helping you
+            make informed decisions for your future.
+          </p>
+        </div>
 
+        <div className="mt-8 grid grid-cols-2 gap-8 md:grid-cols-2">
           <nav aria-label="Footer navigation">
             <h2 className="font-heading text-sm font-semibold text-white">
               Navigation
             </h2>
             <ul className="mt-3 space-y-2">
-              {navigation.map((link) => (
+              {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
