@@ -50,6 +50,9 @@ export const metadata: Metadata = {
     description:
       "Expert career guidance and education advisory powered by AI. Study-abroad support, admissions guidance, and personalised career planning.",
   },
+  alternates: {
+    canonical: "https://creopath.com",
+  },
   robots: {
     index: true,
     follow: true,

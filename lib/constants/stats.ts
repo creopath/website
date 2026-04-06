@@ -1,5 +1,5 @@
 export type StatsItem =
-  | { type: "image"; src: string }
+  | { type: "image"; src: string; alt: string }
   | {
       type: "stat"
       value: string
@@ -9,7 +9,7 @@ export type StatsItem =
     }
 
 export const statsItems: StatsItem[] = [
-  { type: "image", src: "/images/stats-london.jpg" },
+  { type: "image", src: "/images/stats-london.jpg", alt: "London cityscape with Big Ben and red bus" },
   {
     type: "stat",
     value: "10+",
@@ -18,7 +18,7 @@ export const statsItems: StatsItem[] = [
       "Helping clients from India, Turkey, and beyond reach the UK.",
     theme: "red",
   },
-  { type: "image", src: "/images/stats-cambridge.jpeg" },
+  { type: "image", src: "/images/stats-cambridge.jpeg", alt: "Cambridge University King's College Chapel" },
   {
     type: "stat",
     value: "1:1",
@@ -27,7 +27,7 @@ export const statsItems: StatsItem[] = [
       "Work directly with the people guiding your journey — no handoffs.",
     theme: "purple",
   },
-  { type: "image", src: "/images/stats-oxford.jpeg" },
+  { type: "image", src: "/images/stats-oxford.jpeg", alt: "Oxford University Christ Church college" },
   {
     type: "stat",
     value: "London",

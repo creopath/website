@@ -8,7 +8,7 @@ const item: Variants = {
   show: { opacity: 1, y: 0 },
 }
 
-export default function StatImageCard({ src }: { src?: string }) {
+export default function StatImageCard({ src, alt = "" }: { src?: string; alt?: string }) {
   return (
     <motion.div
       variants={item}
@@ -18,7 +18,7 @@ export default function StatImageCard({ src }: { src?: string }) {
         <div className="relative h-full">
           <Image
             src={src}
-            alt=""
+            alt={alt}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
             className="object-cover"

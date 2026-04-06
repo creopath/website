@@ -40,7 +40,7 @@ export default function Stats() {
         >
           {statsItems.map((item) =>
             item.type === "image" ? (
-              <StatImageCard key={item.src} src={item.src} />
+              <StatImageCard key={item.src} src={item.src} alt={item.alt} />
             ) : (
               <StatCard
                 key={item.value}
