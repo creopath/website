@@ -35,10 +35,10 @@ export function Footer() {
           <div>
             <Link href="/">
               <Image
-                src="/images/White-Horizontal.svg"
+                src="/images/White-Symbol.svg"
                 alt="Creopath"
-                width={140}
-                height={38}
+                width={48}
+                height={48}
               />
             </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/60">

@@ -1,10 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 import { motion } from "motion/react"
 import { Mail, MapPin, Send } from "lucide-react"
-import * as z from "zod"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -15,20 +15,11 @@ import {
   FieldGroup,
   FieldLabel,
 } from "@/components/ui/field"
-
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
-  email: z.string().email("Please enter a valid email address."),
-  subject: z.string().min(3, "Subject must be at least 3 characters."),
-  message: z
-    .string()
-    .min(10, "Message must be at least 10 characters.")
-    .max(1000, "Message must be at most 1000 characters."),
-})
-
-type ContactFormValues = z.infer<typeof contactSchema>
+import { contactSchema, type ContactFormValues } from "@/lib/schemas/contact"
 
 export function Contact() {
+  const [submitError, setSubmitError] = useState<string | null>(null)
+
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -42,9 +33,31 @@ export function Contact() {
   const { isSubmitting, isSubmitSuccessful } = form.formState
 
   async function onSubmit(data: ContactFormValues) {
-    // TODO: Wire up with Resend API route
-    console.log(data)
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    setSubmitError(null)
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        const payload = (await response
+          .json()
+          .catch(() => null)) as { error?: string } | null
+        throw new Error(
+          payload?.error ?? "Something went wrong. Please try again."
+        )
+      }
+    } catch (error) {
+      const message =
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      setSubmitError(message)
+      // Re-throw so React Hook Form doesn't mark as successful
+      throw error
+    }
   }
 
   return (
@@ -252,6 +265,16 @@ export function Contact() {
                   aria-live="polite"
                 >
                   Thank you! We&apos;ll get back to you shortly.
+                </p>
+              )}
+
+              {submitError && !isSubmitting && (
+                <p
+                  className="text-center text-sm text-white"
+                  role="alert"
+                  aria-live="assertive"
+                >
+                  {submitError}
                 </p>
               )}
             </form>

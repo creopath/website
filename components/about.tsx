@@ -5,56 +5,36 @@ import { motion } from "motion/react"
 import { ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-type CardTheme = "purple" | "red" | "blue" | "deep-red" | "cloud"
+type CardTheme = "purple" | "blue" | "deep-red"
 
-const themeStyles: Record<
-  CardTheme,
-  { bg: string; text: string; tag: string; overlay: string }
-> = {
+const themes: Record<CardTheme, { bg: string; overlay: string }> = {
   purple: {
     bg: "bg-brand-purple",
-    text: "text-white",
-    tag: "bg-white/15 text-white",
     overlay:
       "bg-linear-to-br from-brand-purple/95 via-brand-purple/70 to-brand-deep-red/40",
   },
-  red: {
-    bg: "bg-brand-red",
-    text: "text-white",
-    tag: "bg-white/15 text-white",
-    overlay:
-      "bg-linear-to-br from-brand-red/95 via-brand-red/70 to-brand-deep-red/40",
-  },
   blue: {
     bg: "bg-brand-blue",
-    text: "text-white",
-    tag: "bg-white/15 text-white",
     overlay:
       "bg-linear-to-br from-brand-blue/95 via-brand-blue/70 to-brand-purple/40",
   },
   "deep-red": {
     bg: "bg-brand-deep-red",
-    text: "text-white",
-    tag: "bg-white/15 text-white",
     overlay:
-      "bg-linear-to-br from-brand-deep-red/95 via-brand-deep-red/70 to-brand-red/40",
-  },
-  cloud: {
-    bg: "bg-white",
-    text: "text-foreground",
-    tag: "bg-foreground/10 text-foreground",
-    overlay: "bg-white/80",
+      "bg-linear-to-br from-brand-deep-red/95 via-brand-deep-red/70 to-brand-deep-red/40",
   },
 }
 
-const cards: {
+type Card = {
   tags: string[]
   title: string
   description: string
   theme: CardTheme
   span?: boolean
   video?: string
-}[] = [
+}
+
+const cards: Card[] = [
   {
     tags: ["mission", "story"],
     title: "Expert guidance for life-changing decisions.",
@@ -129,56 +109,53 @@ export function About() {
 
         {/* Bento grid */}
         <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3">
-          {cards.map((card, i) => {
-            const styles = themeStyles[card.theme]
-            return (
-              <motion.article
-                key={card.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`relative flex flex-col overflow-hidden rounded-2xl p-8 ${styles.bg} ${styles.text} ${
-                  card.span ? "md:col-span-2" : ""
-                }`}
-              >
-                {card.video && (
-                  <>
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="metadata"
-                      className="absolute inset-0 h-full w-full object-cover"
-                      aria-hidden="true"
-                    >
-                      <source src={card.video} type="video/mp4" />
-                    </video>
-                    <div className={`absolute inset-0 ${styles.overlay}`} />
-                  </>
-                )}
-                <div className="relative flex flex-wrap gap-2">
-                  {card.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className={`rounded-md px-2 py-1 text-xs font-medium ${styles.tag}`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <h3
-                  className="relative mt-6 font-heading font-semibold leading-tight text-2xl sm:text-3xl"
-                >
-                  {card.title}
-                </h3>
-                <p className="relative mt-4 leading-relaxed opacity-90">
-                  {card.description}
-                </p>
-              </motion.article>
-            )
-          })}
+          {cards.map((card, i) => (
+            <motion.article
+              key={card.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className={`relative flex flex-col overflow-hidden rounded-2xl p-8 text-white ${themes[card.theme].bg} ${
+                card.span ? "md:col-span-2" : ""
+              }`}
+            >
+              {card.video && (
+                <>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="absolute inset-0 h-full w-full object-cover"
+                    aria-hidden="true"
+                  >
+                    <source src={card.video} type="video/mp4" />
+                  </video>
+                  <div
+                    className={`absolute inset-0 ${themes[card.theme].overlay}`}
+                  />
+                </>
+              )}
+              <div className="relative flex flex-wrap gap-2">
+                {card.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-md bg-white/15 px-2 py-1 text-xs font-medium text-white"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <h3 className="relative mt-6 font-heading text-2xl font-semibold leading-tight sm:text-3xl">
+                {card.title}
+              </h3>
+              <p className="relative mt-4 leading-relaxed opacity-90">
+                {card.description}
+              </p>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>
