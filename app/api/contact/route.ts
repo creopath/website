@@ -41,10 +41,11 @@ export async function POST(request: Request) {
 
   const { name, email, subject, message } = parsed.data
 
-  // Send the email via Resend
   const resend = new Resend(process.env.RESEND_API_KEY)
+
+  // 1. Send the admin notification (critical — must succeed)
   try {
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: process.env.FROM_EMAIL,
       to: [process.env.CONTACT_EMAIL],
       replyTo: email,
@@ -62,21 +63,50 @@ export async function POST(request: Request) {
     })
 
     if (error) {
-      console.error("Resend error:", error)
+      console.error("Resend error (admin notification):", error)
       return NextResponse.json(
         { error: "Failed to send email. Please try again later." },
         { status: 500 }
       )
     }
-
-    return NextResponse.json({ success: true, id: data?.id }, { status: 200 })
   } catch (err) {
-    console.error("Unexpected error sending email:", err)
+    console.error("Unexpected error sending admin notification:", err)
     return NextResponse.json(
       { error: "An unexpected error occurred. Please try again later." },
       { status: 500 }
     )
   }
+
+  // 2. Send the confirmation to the user (best-effort — don't fail the request if this errors)
+  try {
+    const { error } = await resend.emails.send({
+      from: process.env.FROM_EMAIL,
+      to: [email],
+      subject: "We received your message — Creopath",
+      html: `
+        <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px;">
+          <h2 style="color: #4F2B62;">Thanks for reaching out, ${escapeHtml(name)}!</h2>
+          <p>We've received your message and one of our team members will get back to you shortly.</p>
+          <p>For your reference, here's a copy of what you sent:</p>
+          <div style="background: #f7f7f7; border-left: 3px solid #4F2B62; padding: 12px 16px; margin: 16px 0;">
+            <p style="margin: 0 0 8px 0;"><strong>Subject:</strong> ${escapeHtml(subject)}</p>
+            <p style="margin: 0; white-space: pre-wrap;">${escapeHtml(message)}</p>
+          </div>
+          <p>— The Creopath team</p>
+          <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0 16px 0;" />
+          <p style="color: #888; font-size: 12px;">This is an automated message from noreply@creopath.com. Please do not reply to this email.</p>
+        </div>
+      `,
+    })
+
+    if (error) {
+      console.error("Resend error (user confirmation):", error)
+    }
+  } catch (err) {
+    console.error("Unexpected error sending user confirmation:", err)
+  }
+
+  return NextResponse.json({ success: true }, { status: 200 })
 }
 
 // Minimal HTML escape to prevent injection into the email body
