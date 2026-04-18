@@ -1,5 +1,6 @@
 import { Sora, DM_Sans } from "next/font/google"
 import type { Metadata } from "next"
+import { Analytics } from "@vercel/analytics/next"
 
 import "./globals.css"
 import { cn } from "@/lib/utils"
@@ -72,8 +73,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={cn("antialiased", sora.variable, dmSans.variable)}>
-      <body>{children}</body>
+    <html
+      lang="en"
+      className={cn("antialiased", sora.variable, dmSans.variable)}
+    >
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
