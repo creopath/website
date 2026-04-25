@@ -7,6 +7,7 @@ import { Send } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { PhoneInput } from "@/components/ui/phone-input"
 import { Textarea } from "@/components/ui/textarea"
 import {
   Field,
@@ -24,6 +25,7 @@ export default function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
       subject: "",
       message: "",
     },
@@ -41,9 +43,9 @@ export default function ContactForm() {
       })
 
       if (!response.ok) {
-        const payload = (await response
-          .json()
-          .catch(() => null)) as { error?: string } | null
+        const payload = (await response.json().catch(() => null)) as {
+          error?: string
+        } | null
         throw new Error(
           payload?.error ?? "Something went wrong. Please try again."
         )
@@ -128,6 +130,37 @@ export default function ContactForm() {
         </div>
 
         <Controller
+          name="phone"
+          control={form.control}
+          render={({ field, fieldState }) => (
+            <Field data-invalid={fieldState.invalid || undefined}>
+              <FieldLabel
+                htmlFor="contact-phone"
+                className="font-bold text-white"
+              >
+                Phone{" "}
+                <span className="font-normal text-white/70">(optional)</span>
+              </FieldLabel>
+              <PhoneInput
+                {...field}
+                id="contact-phone"
+                defaultCountry="GB"
+                placeholder="Enter phone number"
+                autoComplete="tel"
+                aria-invalid={fieldState.invalid}
+                className={inputStyles}
+              />
+              {fieldState.invalid && (
+                <FieldError
+                  errors={[fieldState.error]}
+                  className="text-white"
+                />
+              )}
+            </Field>
+          )}
+        />
+
+        <Controller
           name="subject"
           control={form.control}
           render={({ field, fieldState }) => (
@@ -198,7 +231,7 @@ export default function ContactForm() {
             Send Message
             <Send
               data-icon="inline-end"
-              className="transition-transform duration-300 group-hover/button:-translate-y-0.5 group-hover/button:translate-x-0.5"
+              className="transition-transform duration-300 group-hover/button:translate-x-0.5 group-hover/button:-translate-y-0.5"
             />
           </>
         )}

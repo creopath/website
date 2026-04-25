@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { Resend } from "resend"
+import { parsePhoneNumberFromString } from "libphonenumber-js"
 
 import { contactSchema } from "@/lib/schemas/contact"
 
@@ -39,7 +40,10 @@ export async function POST(request: Request) {
     )
   }
 
-  const { name, email, subject, message } = parsed.data
+  const { name, email, phone, subject, message } = parsed.data
+  const formattedPhone = phone
+    ? (parsePhoneNumberFromString(phone)?.formatInternational() ?? phone)
+    : ""
 
   const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -55,6 +59,7 @@ export async function POST(request: Request) {
           <h2 style="color: #4F2B62;">New contact form submission</h2>
           <p><strong>Name:</strong> ${escapeHtml(name)}</p>
           <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+          ${formattedPhone ? `<p><strong>Phone:</strong> ${escapeHtml(formattedPhone)}</p>` : ""}
           <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
           <hr style="border: none; border-top: 1px solid #eee; margin: 16px 0;" />
           <p style="white-space: pre-wrap;">${escapeHtml(message)}</p>
@@ -90,6 +95,7 @@ export async function POST(request: Request) {
           <p>For your reference, here's a copy of what you sent:</p>
           <div style="background: #f7f7f7; border-left: 3px solid #4F2B62; padding: 12px 16px; margin: 16px 0;">
             <p style="margin: 0 0 8px 0;"><strong>Subject:</strong> ${escapeHtml(subject)}</p>
+            ${formattedPhone ? `<p style="margin: 0 0 8px 0;"><strong>Phone:</strong> ${escapeHtml(formattedPhone)}</p>` : ""}
             <p style="margin: 0; white-space: pre-wrap;">${escapeHtml(message)}</p>
           </div>
           <p>— The Creopath team</p>
