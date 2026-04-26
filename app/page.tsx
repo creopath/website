@@ -9,6 +9,7 @@ import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import { faqs } from "@/lib/constants/faqs"
 import { services } from "@/lib/constants/services"
+import { socialLinks } from "@/lib/constants/social"
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -28,6 +29,7 @@ const organizationJsonLd = {
     email: "hello@creopath.com",
     contactType: "customer service",
   },
+  sameAs: socialLinks.map((link) => link.href),
 }
 
 const websiteJsonLd = {

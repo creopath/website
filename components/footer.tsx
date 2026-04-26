@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { navLinks } from "@/lib/constants/nav"
+import { socialLinks } from "@/lib/constants/social"
 
 export default function Footer() {
   return (
@@ -73,6 +74,23 @@ export default function Footer() {
               </p>
               <p className="text-sm text-white/60">London, United Kingdom</p>
             </address>
+            {socialLinks.length > 0 && (
+              <ul className="mt-3 -ml-2.5 flex items-center gap-1">
+                {socialLinks.map(({ label, href, icon: Icon }) => (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className="inline-flex size-10 items-center justify-center rounded-md text-white/60 transition-colors hover:text-white"
+                    >
+                      <Icon className="size-5" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
 
