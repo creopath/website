@@ -23,7 +23,8 @@ export default function ContactForm() {
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       phone: "",
       subject: "",
@@ -71,21 +72,21 @@ export default function ContactForm() {
       <FieldGroup>
         <div className="grid gap-7 sm:grid-cols-2">
           <Controller
-            name="name"
+            name="firstName"
             control={form.control}
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid || undefined}>
                 <FieldLabel
-                  htmlFor="contact-name"
+                  htmlFor="contact-first-name"
                   className="font-bold text-white"
                 >
-                  Name
+                  First name
                 </FieldLabel>
                 <Input
                   {...field}
-                  id="contact-name"
-                  placeholder="Your name"
-                  autoComplete="name"
+                  id="contact-first-name"
+                  placeholder="Your first name"
+                  autoComplete="given-name"
                   aria-invalid={fieldState.invalid}
                   className={inputStyles}
                 />
@@ -99,22 +100,21 @@ export default function ContactForm() {
             )}
           />
           <Controller
-            name="email"
+            name="lastName"
             control={form.control}
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid || undefined}>
                 <FieldLabel
-                  htmlFor="contact-email"
+                  htmlFor="contact-last-name"
                   className="font-bold text-white"
                 >
-                  Email
+                  Last name
                 </FieldLabel>
                 <Input
                   {...field}
-                  id="contact-email"
-                  type="email"
-                  placeholder="you@example.com"
-                  autoComplete="email"
+                  id="contact-last-name"
+                  placeholder="Your last name"
+                  autoComplete="family-name"
                   aria-invalid={fieldState.invalid}
                   className={inputStyles}
                 />
@@ -128,6 +128,36 @@ export default function ContactForm() {
             )}
           />
         </div>
+
+        <Controller
+          name="email"
+          control={form.control}
+          render={({ field, fieldState }) => (
+            <Field data-invalid={fieldState.invalid || undefined}>
+              <FieldLabel
+                htmlFor="contact-email"
+                className="font-bold text-white"
+              >
+                Email
+              </FieldLabel>
+              <Input
+                {...field}
+                id="contact-email"
+                type="email"
+                placeholder="you@example.com"
+                autoComplete="email"
+                aria-invalid={fieldState.invalid}
+                className={inputStyles}
+              />
+              {fieldState.invalid && (
+                <FieldError
+                  errors={[fieldState.error]}
+                  className="text-white"
+                />
+              )}
+            </Field>
+          )}
+        />
 
         <Controller
           name="phone"

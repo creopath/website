@@ -40,7 +40,7 @@ export async function POST(request: Request) {
     )
   }
 
-  const { name, email, phone, subject, message } = parsed.data
+  const { firstName, lastName, email, phone, subject, message } = parsed.data
   const formattedPhone = phone
     ? (parsePhoneNumberFromString(phone)?.formatInternational() ?? phone)
     : ""
@@ -57,7 +57,8 @@ export async function POST(request: Request) {
       html: `
         <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px;">
           <h2 style="color: #4F2B62;">New contact form submission</h2>
-          <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+          <p><strong>First name:</strong> ${escapeHtml(firstName)}</p>
+          <p><strong>Last name:</strong> ${escapeHtml(lastName)}</p>
           <p><strong>Email:</strong> ${escapeHtml(email)}</p>
           ${formattedPhone ? `<p><strong>Phone:</strong> ${escapeHtml(formattedPhone)}</p>` : ""}
           <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
@@ -90,7 +91,7 @@ export async function POST(request: Request) {
       subject: "We received your message — Creopath",
       html: `
         <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px;">
-          <h2 style="color: #4F2B62;">Thanks for reaching out, ${escapeHtml(name)}!</h2>
+          <h2 style="color: #4F2B62;">Thanks for reaching out, ${escapeHtml(firstName)}!</h2>
           <p>We've received your message and one of our team members will get back to you shortly.</p>
           <p>For your reference, here's a copy of what you sent:</p>
           <div style="background: #f7f7f7; border-left: 3px solid #4F2B62; padding: 12px 16px; margin: 16px 0;">

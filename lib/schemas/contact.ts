@@ -2,7 +2,16 @@ import * as z from "zod"
 import { isValidPhoneNumber } from "libphonenumber-js"
 
 export const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
+  firstName: z
+    .string()
+    .trim()
+    .min(2, "First name must be at least 2 characters.")
+    .max(50, "First name must be at most 50 characters."),
+  lastName: z
+    .string()
+    .trim()
+    .min(2, "Last name must be at least 2 characters.")
+    .max(50, "Last name must be at most 50 characters."),
   email: z.email("Please enter a valid email address."),
   phone: z
     .string()
