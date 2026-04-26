@@ -13,7 +13,7 @@ import { socialLinks } from "@/lib/constants/social"
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
   name: "Creopath",
   url: "https://creopath.com",
   logo: "https://creopath.com/images/Color-Horizontal.svg",
@@ -24,6 +24,10 @@ const organizationJsonLd = {
     addressLocality: "London",
     addressCountry: "GB",
   },
+  areaServed: [
+    { "@type": "Country", name: "United Kingdom" },
+    "Worldwide",
+  ],
   contactPoint: {
     "@type": "ContactPoint",
     email: "hello@creopath.com",
