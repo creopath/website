@@ -1,7 +1,14 @@
-export const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "About", href: "#about" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
-] as const
+export type NavId = "services" | "howItWorks" | "about" | "faq" | "contact"
+
+export type NavLink = {
+  id: NavId
+  href: string
+}
+
+export const navLinks: NavLink[] = [
+  { id: "services", href: "#services" },
+  { id: "howItWorks", href: "#how-it-works" },
+  { id: "about", href: "#about" },
+  { id: "faq", href: "#faq" },
+  { id: "contact", href: "#contact" },
+]

@@ -2,6 +2,8 @@
 
 import Image from "next/image"
 import { motion } from "motion/react"
+import { useTranslations } from "next-intl"
+
 import { services } from "@/lib/constants/services"
 
 const container = {
@@ -18,6 +20,8 @@ const item = {
 }
 
 export default function Services() {
+  const t = useTranslations("Services")
+
   return (
     <section id="services" className="px-6 py-24">
       <div className="mx-auto max-w-7xl">
@@ -27,15 +31,12 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <p className="text-lg font-bold tracking-wide">
-            What We Offer
-          </p>
+          <p className="text-lg font-bold tracking-wide">{t("eyebrow")}</p>
           <h2 className="mt-2 font-heading text-3xl font-bold text-brand-deep-red sm:text-4xl">
-            Services tailored to your journey
+            {t("title")}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed">
-            Whether you&apos;re planning to study abroad, switching careers, or
-            building new skills, we provide the expert guidance you need.
+            {t("description")}
           </p>
         </motion.div>
 
@@ -48,7 +49,7 @@ export default function Services() {
         >
           {services.map((service) => (
             <motion.article
-              key={service.title}
+              key={service.id}
               variants={item}
               whileHover="hover"
               className="group relative overflow-hidden rounded-2xl bg-brand-deep-red p-4"
@@ -84,7 +85,7 @@ export default function Services() {
                   >
                     <Image
                       src={service.image}
-                      alt={service.title}
+                      alt={t(`items.${service.id}.title`)}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover"
@@ -107,10 +108,10 @@ export default function Services() {
               {/* Content */}
               <div className="px-4 pt-5 pb-4">
                 <h3 className="font-heading text-xl font-semibold text-white">
-                  {service.title}
+                  {t(`items.${service.id}.title`)}
                 </h3>
                 <p className="mt-3 leading-relaxed text-white">
-                  {service.description}
+                  {t(`items.${service.id}.description`)}
                 </p>
               </div>
             </motion.article>

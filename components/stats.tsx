@@ -1,6 +1,8 @@
 "use client"
 
 import { motion } from "motion/react"
+import { useTranslations } from "next-intl"
+
 import StatCard from "@/components/stat-card"
 import StatImageCard from "@/components/stat-image-card"
 import { statsItems } from "@/lib/constants/stats"
@@ -14,6 +16,8 @@ const container = {
 }
 
 export default function Stats() {
+  const t = useTranslations("Stats")
+
   return (
     <section className="px-6 py-24">
       <div className="mx-auto max-w-7xl">
@@ -23,11 +27,10 @@ export default function Stats() {
           viewport={{ once: true }}
         >
           <h2 className="font-heading text-3xl font-bold text-brand-purple sm:text-4xl">
-            Your Journey, Our Mission
+            {t("title")}
           </h2>
           <p className="mt-3 max-w-2xl text-lg leading-relaxed">
-            We&apos;re building something new — and we&apos;re committed to
-            making a real impact on every career journey we support.
+            {t("description")}
           </p>
         </motion.div>
 
@@ -40,13 +43,17 @@ export default function Stats() {
         >
           {statsItems.map((item) =>
             item.type === "image" ? (
-              <StatImageCard key={item.src} src={item.src} alt={item.alt} />
+              <StatImageCard
+                key={item.src}
+                src={item.src}
+                alt={t(`imageAlts.${item.imageId}`)}
+              />
             ) : (
               <StatCard
-                key={item.value}
-                value={item.value}
-                label={item.label}
-                description={item.description}
+                key={item.id}
+                value={t(`items.${item.id}.value`)}
+                label={t(`items.${item.id}.label`)}
+                description={t(`items.${item.id}.description`)}
                 theme={item.theme}
               />
             )

@@ -1,0 +1,230 @@
+{
+  "Metadata": {
+    "siteName": "Creopath",
+    "title": "Creopath | AI Destekli Kariyer Danışmanlığı",
+    "description": "Creopath, AI destekli rehberlikle kariyer, eğitim ve yaşam kararlarınızı bilinçli almanıza yardımcı olur. Yurt dışında eğitim, üniversite başvuruları ve kariyer planlaması için uzman desteği.",
+    "ogDescription": "AI destekli uzman kariyer danışmanlığı ve eğitim rehberliği. Yurt dışı eğitim desteği, üniversite başvuruları ve kişiselleştirilmiş kariyer planlaması.",
+    "ogLocale": "tr_TR",
+    "keywords": "kariyer danışmanlığı,yurt dışında eğitim İngiltere,eğitim danışmanlığı,kariyer rehberliği,AI kariyer planlaması,üniversite başvuru danışmanlığı,beceri geliştirme,İngiltere eğitim"
+  },
+  "Nav": {
+    "services": "Hizmetler",
+    "howItWorks": "Nasıl Çalışır",
+    "about": "Hakkımızda",
+    "faq": "SSS",
+    "contact": "İletişim"
+  },
+  "Header": {
+    "logoAlt": "Creopath",
+    "mainNavLabel": "Ana menü",
+    "openMenuLabel": "Menüyü aç",
+    "ctaGetStarted": "Başla"
+  },
+  "MobileMenu": {
+    "logoAlt": "Creopath",
+    "menuLabel": "Menü",
+    "navLabel": "Mobil menü",
+    "closeMenuLabel": "Menüyü kapat",
+    "ctaGetStarted": "Başla"
+  },
+  "Hero": {
+    "eyebrow": "AI Destekli Kariyer Danışmanlığı",
+    "title": "<highlight>Kariyer yolculuğunuz,</highlight> <accent>uzmanlar eşliğinde.</accent>",
+    "description": "Bireylerin kariyer, eğitim ve yaşam konularında bilinçli kararlar almasına yardımcı oluyoruz. Yurt dışı eğitim planlamasından kişiselleştirilmiş kariyer rotalarına kadar, Creopath her adımda yanınızda.",
+    "primaryCta": "Ücretsiz Görüşme Planla",
+    "secondaryCta": "Hizmetlerimizi Keşfedin",
+    "imageAlt": "Kariyer danışmanlığı ve eğitim rehberliği"
+  },
+  "Stats": {
+    "title": "Sizin Yolculuğunuz, Bizim Misyonumuz",
+    "description": "Yeni bir şey inşa ediyoruz — ve desteklediğimiz her kariyer yolculuğunda gerçek bir fark yaratmaya kararlıyız.",
+    "items": {
+      "countriesSupported": {
+        "value": "10+",
+        "label": "Ülkeden Müşteri",
+        "description": "Hindistan, Türkiye ve daha birçok ülkeden müşterilerimizin İngiltere'ye ulaşmasına yardımcı oluyoruz."
+      },
+      "personalisedAdvisory": {
+        "value": "1:1",
+        "label": "Kişiselleştirilmiş Danışmanlık",
+        "description": "Yolculuğunuzu yönlendiren kişilerle doğrudan çalışın — ara süreçler yok."
+      },
+      "basedInUk": {
+        "value": "Londra",
+        "label": "İngiltere Merkezli",
+        "description": "İngiltere eğitim sistemi ve kariyer fırsatlarında yerinde uzmanlık."
+      }
+    },
+    "imageAlts": {
+      "london": "Big Ben ve kırmızı otobüs ile Londra şehir manzarası",
+      "cambridge": "Cambridge Üniversitesi King's College Şapeli",
+      "oxford": "Oxford Üniversitesi Christ Church koleji"
+    }
+  },
+  "Services": {
+    "eyebrow": "Sunduklarımız",
+    "title": "Yolculuğunuza özel hizmetler",
+    "description": "Yurt dışında eğitim planlıyor, kariyer değiştiriyor veya yeni beceriler kazanmak istiyor olun, ihtiyacınız olan uzman rehberliği sağlıyoruz.",
+    "items": {
+      "careerCounselling": {
+        "title": "Kariyer Danışmanlığı",
+        "description": "Hedeflerinize, güçlü yönlerinize ve hayallerinize göre kişiselleştirilmiş kariyer rehberliği alın. Kararlarınızda netlik ve özgüvenle ilerlemenize yardımcı oluyoruz."
+      },
+      "studyAbroad": {
+        "title": "Yurt Dışı Eğitim ve Üniversite Başvuruları",
+        "description": "İngiltere'de doğru üniversiteyi seçmekten kabul almaya kadar, yurt dışı eğitim yolculuğunuzun her adımında size rehberlik ediyoruz."
+      },
+      "skillDevelopment": {
+        "title": "Beceri Geliştirme ve Planlama",
+        "description": "Profesyonel gelişiminiz için bir yol haritası oluşturun. Beceri eksikliklerinizi belirleyip kariyer hedeflerinize ulaşmanız için uygulanabilir planlar hazırlıyoruz."
+      }
+    }
+  },
+  "HowItWorks": {
+    "eyebrow": "Nasıl Çalışır",
+    "title": "Başlamak için üç basit adım",
+    "steps": {
+      "bookConsultation": {
+        "title": "Görüşme Planlayın",
+        "description": "Ücretsiz tanışma görüşmesi ayarlayın. Hedeflerinizi, geçmişinizi ve nereye ulaşmak istediğinizi öğreniyoruz."
+      },
+      "getPlan": {
+        "title": "Kişisel Planınızı Alın",
+        "description": "Eğitim rotalarını, kariyer seçeneklerini ve uygulanabilir adımları kapsayan kişiye özel bir yol haritası hazırlıyoruz."
+      },
+      "ongoingSupport": {
+        "title": "Sürekli Destek Alın",
+        "description": "Başvurulardan mülakatlara kadar, hedefinize ulaşana dek her aşamada yanınızdayız."
+      }
+    }
+  },
+  "About": {
+    "title": "Neden Creopath?",
+    "cta": "İletişime geç",
+    "cards": {
+      "mission": {
+        "tags": "misyon,hikaye",
+        "title": "Hayatınızı değiştiren kararlar için uzman rehberlik.",
+        "description": "Creopath, basit bir inançla kuruldu: kariyer ve eğitim gibi hayatı değiştiren kararlarda herkes uzman rehberliğine erişmeyi hak eder. Londra merkezli olarak, müşterilerimizin İngiltere ve global fırsatlara giden yolculuğunda kişisel uzmanlığı AI destekli içgörülerle birleştiriyoruz."
+      },
+      "personalised": {
+        "tags": "kişiselleştirilmiş",
+        "title": "Kişiselleştirilmiş yaklaşım",
+        "description": "Genel tavsiyeler yok. Her öneri kendi durumunuza özel olarak hazırlanır."
+      },
+      "ukExpertise": {
+        "tags": "İngiltere uzmanlığı",
+        "title": "Derin İngiltere bilgisi",
+        "description": "İngiltere eğitim sistemi, vize süreçleri ve kariyer fırsatlarında uzmanlık."
+      },
+      "aiInsights": {
+        "tags": "inovasyon",
+        "title": "AI destekli içgörüler",
+        "description": "Veriye dayalı kariyer ve eğitim önerileri sunmak için AI araçları kullanıyoruz."
+      },
+      "support": {
+        "tags": "destek",
+        "title": "Uçtan uca destek",
+        "description": "İlk görüşmenizden yerleşmenize kadar, tüm süreç boyunca yanınızdayız."
+      }
+    }
+  },
+  "FAQ": {
+    "eyebrow": "SSS",
+    "title": "Sıkça sorulan sorular",
+    "description": "Farklı bir sorunuz mu var? Aşağıdaki iletişim formu üzerinden bize ulaşın.",
+    "questions": {
+      "whoFor": {
+        "question": "Creopath kimler için?",
+        "answer": "Creopath, kariyer ve eğitim konularında bilinçli kararlar almak isteyen herkes içindir — İngiltere'de okumayı planlayan bir öğrenci, kariyer değişikliği düşünen bir profesyonel ya da beceri geliştirme ve global fırsatlar konusunda rehberlik arayan biri olabilirsiniz."
+      },
+      "doINeedUk": {
+        "question": "Hizmetlerinizi kullanmak için İngiltere'de mi olmam gerekiyor?",
+        "answer": "Hiç de değil. Hindistan, Türkiye ve birçok başka ülke dahil olmak üzere dünyanın her yerinden müşterilerle çalışıyoruz. Görüşmelerimiz çevrimiçi yapıldığı için rehberliğimize her yerden erişebilirsiniz."
+      },
+      "freeConsultation": {
+        "question": "Ücretsiz görüşme neleri kapsıyor?",
+        "answer": "Ücretsiz görüşmeniz sırasında hedefleriniz, geçmişiniz ve hayalleriniz hakkında konuşuyoruz. Seçenekleriniz hakkında dürüst bir değerlendirme yapıyor ve nasıl ilerleyebileceğinizi gösteriyoruz."
+      },
+      "howDifferent": {
+        "question": "Creopath diğer danışmanlık şirketlerinden nasıl farklı?",
+        "answer": "Kişiselleştirilmiş, birebir danışmanlığı AI destekli içgörülerle birleştirerek veriye dayalı öneriler sunuyoruz. Küçük bir ekip olarak yolculuğunuzu yönlendiren kişilerle doğrudan çalışıyorsunuz — genel tavsiyeler ya da departmanlar arasında dolaşmak yok."
+      },
+      "studyAbroadServices": {
+        "question": "Yurt dışı eğitim için hangi hizmetleri sunuyorsunuz?",
+        "answer": "İngiltere'de okumayı planlayan öğrenciler için üniversite seçimi, başvuru rehberliği, niyet mektubu incelemesi, vize süreci desteği ve gidiş öncesi hazırlık dahil uçtan uca destek sunuyoruz."
+      },
+      "howMuch": {
+        "question": "Hizmetleriniz ne kadar?",
+        "answer": "İlk görüşmemiz ücretsiz. Sonrasında fiyatlandırma, ihtiyacınız olan hizmetlerin kapsamına bağlıdır. İlk görüşmenizde net bir döküm sunuyoruz — gizli ücret veya sürpriz yok."
+      }
+    }
+  },
+  "Contact": {
+    "eyebrow": "İletişime Geçin",
+    "title": "Bir sonraki adımı atmaya hazır mısınız?",
+    "description": "Ücretsiz bir görüşme ayarlayın ve kariyer ve eğitim hedeflerinize ulaşmanıza nasıl yardımcı olabileceğimizi konuşalım.",
+    "emailLabel": "E-posta",
+    "locationLabel": "Konum",
+    "locationValue": "Londra, Birleşik Krallık"
+  },
+  "ContactForm": {
+    "firstNameLabel": "Ad",
+    "firstNamePlaceholder": "Adınız",
+    "lastNameLabel": "Soyad",
+    "lastNamePlaceholder": "Soyadınız",
+    "emailLabel": "E-posta",
+    "emailPlaceholder": "siz@ornek.com",
+    "phoneLabel": "Telefon",
+    "phoneOptional": "(isteğe bağlı)",
+    "phonePlaceholder": "Telefon numaranızı girin",
+    "subjectLabel": "Konu",
+    "subjectPlaceholder": "Size nasıl yardımcı olabiliriz?",
+    "messageLabel": "Mesaj",
+    "messagePlaceholder": "Hedefleriniz hakkında bize biraz bahsedin...",
+    "submit": "Mesaj Gönder",
+    "submitting": "Gönderiliyor...",
+    "submitSuccess": "Mesaj Gönderildi!",
+    "successMessage": "Teşekkürler! En kısa sürede size dönüş yapacağız.",
+    "genericError": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+    "validation": {
+      "firstNameTooShort": "Ad en az 2 karakter olmalıdır.",
+      "firstNameTooLong": "Ad en fazla 50 karakter olmalıdır.",
+      "lastNameTooShort": "Soyad en az 2 karakter olmalıdır.",
+      "lastNameTooLong": "Soyad en fazla 50 karakter olmalıdır.",
+      "emailInvalid": "Lütfen geçerli bir e-posta adresi girin.",
+      "phoneInvalid": "Lütfen geçerli bir telefon numarası girin.",
+      "subjectTooShort": "Konu en az 3 karakter olmalıdır.",
+      "messageTooShort": "Mesaj en az 10 karakter olmalıdır.",
+      "messageTooLong": "Mesaj en fazla 1000 karakter olmalıdır."
+    }
+  },
+  "Footer": {
+    "logoAlt": "Creopath",
+    "tagline": "AI destekli kariyer danışmanlığı ve eğitim rehberliği. Geleceğiniz için bilinçli kararlar almanıza yardımcı oluyoruz.",
+    "navigationHeading": "Menü",
+    "contactHeading": "İletişim",
+    "navigationLabel": "Alt menü",
+    "locationValue": "Londra, Birleşik Krallık",
+    "copyright": "© {year} Creopath. Tüm hakları saklıdır."
+  },
+  "LanguageSwitcher": {
+    "label": "Dil",
+    "en": "English",
+    "tr": "Türkçe"
+  },
+  "StructuredData": {
+    "businessDescription": "Londra merkezli AI destekli kariyer danışmanlığı ve eğitim rehberliği şirketi.",
+    "serviceCatalogName": "Kariyer Danışmanlığı Hizmetleri"
+  },
+  "EmailUserConfirmation": {
+    "subject": "Mesajınızı aldık — Creopath",
+    "greeting": "Bize ulaştığınız için teşekkürler, {name}!",
+    "intro": "Mesajınızı aldık ve ekip üyelerimizden biri kısa süre içinde size dönüş yapacak.",
+    "referenceIntro": "Bilgi olması açısından, gönderdiğiniz mesajın bir kopyası:",
+    "subjectLabel": "Konu",
+    "phoneLabel": "Telefon",
+    "signoff": "— Creopath ekibi",
+    "noReplyNote": "Bu, noreply@creopath.com adresinden gönderilen otomatik bir mesajdır. Lütfen bu e-postayı yanıtlamayın."
+  }
+}

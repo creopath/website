@@ -1,12 +1,16 @@
 "use client"
 
-import Link from "next/link"
 import { motion } from "motion/react"
 import { ArrowUpRight } from "lucide-react"
+import { useTranslations } from "next-intl"
+
 import { Button } from "@/components/ui/button"
 import { aboutCards, cardThemes } from "@/lib/constants/about"
+import { Link } from "@/i18n/navigation"
 
 export default function About() {
+  const t = useTranslations("About")
+
   return (
     <section id="about" className="px-4 py-24">
       <div className="mx-auto max-w-7xl">
@@ -18,7 +22,7 @@ export default function About() {
             viewport={{ once: true }}
             className="font-heading text-3xl font-bold text-primary sm:text-4xl"
           >
-            Why Creopath?
+            {t("title")}
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -28,7 +32,7 @@ export default function About() {
           >
             <Button asChild size="lg" className="bg-brand-blue">
               <Link href="#contact">
-                Get in touch
+                {t("cta")}
                 <ArrowUpRight
                   data-icon="inline-end"
                   className="transition-transform duration-300 group-hover/button:-translate-y-0.5 group-hover/button:translate-x-0.5"
@@ -42,7 +46,7 @@ export default function About() {
         <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3">
           {aboutCards.map((card, i) => (
             <motion.article
-              key={card.title}
+              key={card.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -70,20 +74,22 @@ export default function About() {
                 </>
               )}
               <div className="relative flex flex-wrap gap-2">
-                {card.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-md bg-white/15 px-2 py-1 text-xs font-medium text-white"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                {t(`cards.${card.id}.tags`)
+                  .split(",")
+                  .map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-md bg-white/15 px-2 py-1 text-xs font-medium text-white"
+                    >
+                      {tag.trim()}
+                    </span>
+                  ))}
               </div>
               <h3 className="relative mt-6 font-heading text-2xl font-semibold leading-tight sm:text-3xl">
-                {card.title}
+                {t(`cards.${card.id}.title`)}
               </h3>
               <p className="relative mt-4 leading-relaxed opacity-90">
-                {card.description}
+                {t(`cards.${card.id}.description`)}
               </p>
             </motion.article>
           ))}

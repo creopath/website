@@ -18,51 +18,31 @@ export const cardThemes: Record<CardTheme, { bg: string; overlay: string }> = {
   },
 }
 
+export type AboutCardId =
+  | "mission"
+  | "personalised"
+  | "ukExpertise"
+  | "aiInsights"
+  | "support"
+
 export type AboutCard = {
-  tags: string[]
-  title: string
-  description: string
+  id: AboutCardId
   theme: CardTheme
   span?: boolean
   video?: string
 }
 
 export const aboutCards: AboutCard[] = [
+  { id: "mission", theme: "purple", span: true },
+  { id: "personalised", theme: "blue" },
   {
-    tags: ["mission", "story"],
-    title: "Expert guidance for life-changing decisions.",
-    description:
-      "Creopath was founded with a simple belief: everyone deserves access to expert guidance when making life-changing career and education decisions. Based in London, we combine personal expertise with AI-powered insights to help clients navigate their path to the UK and global opportunities.",
-    theme: "purple",
-    span: true,
-  },
-  {
-    tags: ["personalised"],
-    title: "A personalised approach",
-    description:
-      "No generic advice. Every recommendation is tailored to your unique situation.",
-    theme: "blue",
-  },
-  {
-    tags: ["uk expertise"],
-    title: "Deep UK knowledge",
-    description:
-      "Expertise in UK education, visa processes, and career opportunities.",
+    id: "ukExpertise",
     theme: "blue",
     video: "/videos/London_Tower_Bridge.mp4",
   },
+  { id: "aiInsights", theme: "deep-red" },
   {
-    tags: ["innovation"],
-    title: "AI-enhanced insights",
-    description:
-      "We use AI tools to provide data-driven career and education recommendations.",
-    theme: "deep-red",
-  },
-  {
-    tags: ["support"],
-    title: "End-to-end support",
-    description:
-      "From your first consultation to settling in, we're with you throughout.",
+    id: "support",
     theme: "purple",
     video: "/videos/Businesswomen_Collaboration.mp4",
   },

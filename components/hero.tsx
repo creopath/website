@@ -1,12 +1,16 @@
 "use client"
 
-import Link from "next/link"
 import Image from "next/image"
 import { motion } from "motion/react"
 import { ArrowUpRight } from "lucide-react"
+import { useTranslations } from "next-intl"
+
 import { Button } from "@/components/ui/button"
+import { Link } from "@/i18n/navigation"
 
 export default function Hero() {
+  const t = useTranslations("Hero")
+
   return (
     <section className="relative flex min-h-[calc(100svh-var(--navbar-height))] items-center overflow-hidden px-6">
       <div className="mx-auto w-full max-w-7xl">
@@ -18,7 +22,7 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
               className="text-sm uppercase font-semibold tracking-wide text-primary"
             >
-              AI-Powered Career Guidance
+              {t("eyebrow")}
             </motion.p>
 
             <motion.h1
@@ -27,8 +31,14 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="mt-4 font-heading text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
             >
-              Your <span className="text-brand-deep-red">career journey,</span>{" "}
-              <span className="text-primary">guided by experts.</span>
+              {t.rich("title", {
+                highlight: (chunks) => (
+                  <span className="text-brand-deep-red">{chunks}</span>
+                ),
+                accent: (chunks) => (
+                  <span className="text-primary">{chunks}</span>
+                ),
+              })}
             </motion.h1>
 
             <motion.p
@@ -37,9 +47,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-6 text-lg leading-relaxed"
             >
-              We help individuals make informed career, education, and life
-              decisions. From study-abroad planning to personalised career
-              pathways, Creopath is with you every step of the way.
+              {t("description")}
             </motion.p>
 
             <motion.div
@@ -50,7 +58,7 @@ export default function Hero() {
             >
               <Button asChild size="lg" className="bg-brand-blue">
                 <Link href="#contact">
-                  Book a Free Consultation
+                  {t("primaryCta")}
                   <ArrowUpRight
                     data-icon="inline-end"
                     className="transition-transform duration-300 group-hover/button:-translate-y-0.5 group-hover/button:translate-x-0.5"
@@ -58,7 +66,7 @@ export default function Hero() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="#services">Explore Our Services</Link>
+                <Link href="#services">{t("secondaryCta")}</Link>
               </Button>
             </motion.div>
           </div>
@@ -71,7 +79,7 @@ export default function Hero() {
           >
             <Image
               src="/images/hero-image.jpeg"
-              alt="Career guidance and education advisory"
+              alt={t("imageAlt")}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"

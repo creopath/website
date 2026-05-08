@@ -1,12 +1,15 @@
 "use client"
 
 import { useEffect } from "react"
-import Link from "next/link"
 import Image from "next/image"
 import { AnimatePresence, motion } from "motion/react"
 import { X } from "lucide-react"
+import { useTranslations } from "next-intl"
+
 import { Button } from "@/components/ui/button"
+import LanguageSwitcher from "@/components/language-switcher"
 import { navLinks } from "@/lib/constants/nav"
+import { Link } from "@/i18n/navigation"
 
 const menuVariants = {
   hidden: {
@@ -49,6 +52,9 @@ export default function MobileMenu({
   isOpen: boolean
   onClose: () => void
 }) {
+  const t = useTranslations("MobileMenu")
+  const tNav = useTranslations("Nav")
+
   // Body scroll lock while menu is open
   useEffect(() => {
     if (!isOpen) return
@@ -97,7 +103,7 @@ export default function MobileMenu({
           exit="hidden"
           role="dialog"
           aria-modal="true"
-          aria-label="Navigation menu"
+          aria-label={t("menuLabel")}
           className="fixed inset-0 z-50 flex flex-col bg-linear-to-br from-brand-cloud from-25% via-brand-deep-red/40 via-65% to-brand-blue/80 backdrop-blur-lg md:hidden"
         >
           {/* Top bar with logo and close button */}
@@ -105,7 +111,7 @@ export default function MobileMenu({
             <Link href="/" onClick={handleLinkClick}>
               <Image
                 src="/images/Color-Horizontal.svg"
-                alt="Creopath"
+                alt={t("logoAlt")}
                 width={140}
                 height={38}
               />
@@ -113,7 +119,7 @@ export default function MobileMenu({
             <Button
               size="icon"
               onClick={onClose}
-              aria-label="Close menu"
+              aria-label={t("closeMenuLabel")}
               className="cursor-pointer text-foreground bg-brand-cloud hover:bg-brand-cloud/80"
             >
               <X />
@@ -123,7 +129,7 @@ export default function MobileMenu({
           {/* Nav links */}
           <motion.nav
             variants={listVariants}
-            aria-label="Mobile navigation"
+            aria-label={t("navLabel")}
             className="flex flex-1 flex-col px-6 pt-8 pb-12"
           >
             {navLinks.map((link, index) => (
@@ -137,15 +143,19 @@ export default function MobileMenu({
                   onClick={handleLinkClick}
                   className="font-heading text-3xl font-bold transition-colors hover:text-brand-deep-red"
                 >
-                  {link.label}
+                  {tNav(link.id)}
                 </Link>
               </motion.div>
             ))}
 
-            <motion.div variants={itemVariants} className="mt-auto pt-8">
+            <motion.div
+              variants={itemVariants}
+              className="mt-auto flex flex-col gap-4 pt-8"
+            >
+              <LanguageSwitcher variant="menu" />
               <Button asChild size="lg" className="w-full bg-brand-blue">
                 <Link href="#contact" onClick={handleLinkClick}>
-                  Get Started
+                  {t("ctaGetStarted")}
                 </Link>
               </Button>
             </motion.div>

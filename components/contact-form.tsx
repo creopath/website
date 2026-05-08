@@ -4,6 +4,7 @@ import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 import { Send } from "lucide-react"
+import { useLocale, useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -17,8 +18,24 @@ import {
 } from "@/components/ui/field"
 import { contactSchema, type ContactFormValues } from "@/lib/schemas/contact"
 
+const inputStyles =
+  "bg-white! text-foreground placeholder:text-muted-foreground focus-visible:border-input focus-visible:ring-white/30"
+
 export default function ContactForm() {
   const [submitError, setSubmitError] = useState<string | null>(null)
+  const t = useTranslations("ContactForm")
+  const tValidation = useTranslations("ContactForm.validation")
+  const locale = useLocale()
+
+  // Translate a validation key emitted by the schema (e.g. "firstNameTooShort")
+  // into the localized message. The schema only emits known keys, so the cast
+  // is safe at runtime.
+  const translateValidation = (
+    key: string | undefined
+  ): string | undefined => {
+    if (!key) return undefined
+    return tValidation(key as Parameters<typeof tValidation>[0])
+  }
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
@@ -40,29 +57,21 @@ export default function ContactForm() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, locale }),
       })
 
       if (!response.ok) {
-        const payload = (await response.json().catch(() => null)) as {
-          error?: string
-        } | null
-        throw new Error(
-          payload?.error ?? "Something went wrong. Please try again."
-        )
+        throw new Error(t("genericError"))
       }
     } catch (error) {
       const message =
-        error instanceof Error
+        error instanceof Error && error.message
           ? error.message
-          : "Something went wrong. Please try again."
+          : t("genericError")
       setSubmitError(message)
       throw error
     }
   }
-
-  const inputStyles =
-    "bg-white! text-foreground placeholder:text-muted-foreground focus-visible:border-input focus-visible:ring-white/30"
 
   return (
     <form
@@ -80,21 +89,20 @@ export default function ContactForm() {
                   htmlFor="contact-first-name"
                   className="font-bold text-white"
                 >
-                  First name
+                  {t("firstNameLabel")}
                 </FieldLabel>
                 <Input
                   {...field}
                   id="contact-first-name"
-                  placeholder="Your first name"
+                  placeholder={t("firstNamePlaceholder")}
                   autoComplete="given-name"
                   aria-invalid={fieldState.invalid}
                   className={inputStyles}
                 />
                 {fieldState.invalid && (
-                  <FieldError
-                    errors={[fieldState.error]}
-                    className="text-white"
-                  />
+                  <FieldError className="text-white">
+                    {translateValidation(fieldState.error?.message)}
+                  </FieldError>
                 )}
               </Field>
             )}
@@ -108,21 +116,20 @@ export default function ContactForm() {
                   htmlFor="contact-last-name"
                   className="font-bold text-white"
                 >
-                  Last name
+                  {t("lastNameLabel")}
                 </FieldLabel>
                 <Input
                   {...field}
                   id="contact-last-name"
-                  placeholder="Your last name"
+                  placeholder={t("lastNamePlaceholder")}
                   autoComplete="family-name"
                   aria-invalid={fieldState.invalid}
                   className={inputStyles}
                 />
                 {fieldState.invalid && (
-                  <FieldError
-                    errors={[fieldState.error]}
-                    className="text-white"
-                  />
+                  <FieldError className="text-white">
+                    {translateValidation(fieldState.error?.message)}
+                  </FieldError>
                 )}
               </Field>
             )}
@@ -138,22 +145,21 @@ export default function ContactForm() {
                 htmlFor="contact-email"
                 className="font-bold text-white"
               >
-                Email
+                {t("emailLabel")}
               </FieldLabel>
               <Input
                 {...field}
                 id="contact-email"
                 type="email"
-                placeholder="you@example.com"
+                placeholder={t("emailPlaceholder")}
                 autoComplete="email"
                 aria-invalid={fieldState.invalid}
                 className={inputStyles}
               />
               {fieldState.invalid && (
-                <FieldError
-                  errors={[fieldState.error]}
-                  className="text-white"
-                />
+                <FieldError className="text-white">
+                  {translateValidation(fieldState.error?.message)}
+                </FieldError>
               )}
             </Field>
           )}
@@ -168,23 +174,24 @@ export default function ContactForm() {
                 htmlFor="contact-phone"
                 className="font-bold text-white"
               >
-                Phone{" "}
-                <span className="font-normal text-white/70">(optional)</span>
+                {t("phoneLabel")}{" "}
+                <span className="font-normal text-white/70">
+                  {t("phoneOptional")}
+                </span>
               </FieldLabel>
               <PhoneInput
                 {...field}
                 id="contact-phone"
                 defaultCountry="GB"
-                placeholder="Enter phone number"
+                placeholder={t("phonePlaceholder")}
                 autoComplete="tel"
                 aria-invalid={fieldState.invalid}
                 className={inputStyles}
               />
               {fieldState.invalid && (
-                <FieldError
-                  errors={[fieldState.error]}
-                  className="text-white"
-                />
+                <FieldError className="text-white">
+                  {translateValidation(fieldState.error?.message)}
+                </FieldError>
               )}
             </Field>
           )}
@@ -199,20 +206,19 @@ export default function ContactForm() {
                 htmlFor="contact-subject"
                 className="font-bold text-white"
               >
-                Subject
+                {t("subjectLabel")}
               </FieldLabel>
               <Input
                 {...field}
                 id="contact-subject"
-                placeholder="How can we help?"
+                placeholder={t("subjectPlaceholder")}
                 aria-invalid={fieldState.invalid}
                 className={inputStyles}
               />
               {fieldState.invalid && (
-                <FieldError
-                  errors={[fieldState.error]}
-                  className="text-white"
-                />
+                <FieldError className="text-white">
+                  {translateValidation(fieldState.error?.message)}
+                </FieldError>
               )}
             </Field>
           )}
@@ -227,21 +233,20 @@ export default function ContactForm() {
                 htmlFor="contact-message"
                 className="font-bold text-white"
               >
-                Message
+                {t("messageLabel")}
               </FieldLabel>
               <Textarea
                 {...field}
                 id="contact-message"
-                placeholder="Tell us about your goals..."
+                placeholder={t("messagePlaceholder")}
                 rows={5}
                 aria-invalid={fieldState.invalid}
                 className={inputStyles}
               />
               {fieldState.invalid && (
-                <FieldError
-                  errors={[fieldState.error]}
-                  className="text-white"
-                />
+                <FieldError className="text-white">
+                  {translateValidation(fieldState.error?.message)}
+                </FieldError>
               )}
             </Field>
           )}
@@ -254,11 +259,11 @@ export default function ContactForm() {
         className="w-full cursor-pointer bg-white text-brand-deep-red hover:bg-brand-cloud"
         disabled={isSubmitting || isSubmitSuccessful}
       >
-        {isSubmitting && "Sending..."}
-        {isSubmitSuccessful && "Message Sent!"}
+        {isSubmitting && t("submitting")}
+        {isSubmitSuccessful && t("submitSuccess")}
         {!isSubmitting && !isSubmitSuccessful && (
           <>
-            Send Message
+            {t("submit")}
             <Send
               data-icon="inline-end"
               className="transition-transform duration-300 group-hover/button:translate-x-0.5 group-hover/button:-translate-y-0.5"
@@ -273,7 +278,7 @@ export default function ContactForm() {
           role="status"
           aria-live="polite"
         >
-          Thank you! We&apos;ll get back to you shortly.
+          {t("successMessage")}
         </p>
       )}
 

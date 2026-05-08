@@ -1,0 +1,230 @@
+{
+  "Metadata": {
+    "siteName": "Creopath",
+    "title": "Creopath | AI-Powered Career Guidance & Advisory",
+    "description": "Creopath helps individuals make informed career, education, and life decisions with AI-powered guidance. Expert support for study-abroad, admissions, and career planning.",
+    "ogDescription": "Expert career guidance and education advisory powered by AI. Study-abroad support, admissions guidance, and personalised career planning.",
+    "ogLocale": "en_GB",
+    "keywords": "career guidance,study abroad UK,education advisory,career counselling,AI career planning,admissions guidance,skill development,UK education"
+  },
+  "Nav": {
+    "services": "Services",
+    "howItWorks": "How It Works",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "Header": {
+    "logoAlt": "Creopath",
+    "mainNavLabel": "Main navigation",
+    "openMenuLabel": "Open menu",
+    "ctaGetStarted": "Get Started"
+  },
+  "MobileMenu": {
+    "logoAlt": "Creopath",
+    "menuLabel": "Navigation menu",
+    "navLabel": "Mobile navigation",
+    "closeMenuLabel": "Close menu",
+    "ctaGetStarted": "Get Started"
+  },
+  "Hero": {
+    "eyebrow": "AI-Powered Career Guidance",
+    "title": "Your <highlight>career journey,</highlight> <accent>guided by experts.</accent>",
+    "description": "We help individuals make informed career, education, and life decisions. From study-abroad planning to personalised career pathways, Creopath is with you every step of the way.",
+    "primaryCta": "Book a Free Consultation",
+    "secondaryCta": "Explore Our Services",
+    "imageAlt": "Career guidance and education advisory"
+  },
+  "Stats": {
+    "title": "Your Journey, Our Mission",
+    "description": "We're building something new — and we're committed to making a real impact on every career journey we support.",
+    "items": {
+      "countriesSupported": {
+        "value": "10+",
+        "label": "Countries Supported",
+        "description": "Helping clients from India, Turkey, and beyond reach the UK."
+      },
+      "personalisedAdvisory": {
+        "value": "1:1",
+        "label": "Personalised Advisory",
+        "description": "Work directly with the people guiding your journey — no handoffs."
+      },
+      "basedInUk": {
+        "value": "London",
+        "label": "Based in the UK",
+        "description": "On-the-ground expertise in UK education and career pathways."
+      }
+    },
+    "imageAlts": {
+      "london": "London cityscape with Big Ben and red bus",
+      "cambridge": "Cambridge University King's College Chapel",
+      "oxford": "Oxford University Christ Church college"
+    }
+  },
+  "Services": {
+    "eyebrow": "What We Offer",
+    "title": "Services tailored to your journey",
+    "description": "Whether you're planning to study abroad, switching careers, or building new skills, we provide the expert guidance you need.",
+    "items": {
+      "careerCounselling": {
+        "title": "Career Counselling",
+        "description": "Get personalised career guidance tailored to your goals, strengths, and aspirations. We help you navigate decisions with clarity and confidence."
+      },
+      "studyAbroad": {
+        "title": "Study Abroad & Admissions",
+        "description": "From choosing the right university in the UK to securing your admission, we guide you through every step of the study-abroad journey."
+      },
+      "skillDevelopment": {
+        "title": "Skill Development & Planning",
+        "description": "Build a roadmap for your professional growth. We identify skill gaps and create actionable plans to help you reach your career goals."
+      }
+    }
+  },
+  "HowItWorks": {
+    "eyebrow": "How It Works",
+    "title": "Three simple steps to get started",
+    "steps": {
+      "bookConsultation": {
+        "title": "Book a Consultation",
+        "description": "Schedule a free introductory call. We'll learn about your goals, background, and where you want to be."
+      },
+      "getPlan": {
+        "title": "Get Your Personalised Plan",
+        "description": "We create a tailored roadmap covering education pathways, career options, and actionable next steps."
+      },
+      "ongoingSupport": {
+        "title": "Receive Ongoing Support",
+        "description": "From applications to interviews, we guide you through every milestone until you reach your destination."
+      }
+    }
+  },
+  "About": {
+    "title": "Why Creopath?",
+    "cta": "Get in touch",
+    "cards": {
+      "mission": {
+        "tags": "mission,story",
+        "title": "Expert guidance for life-changing decisions.",
+        "description": "Creopath was founded with a simple belief: everyone deserves access to expert guidance when making life-changing career and education decisions. Based in London, we combine personal expertise with AI-powered insights to help clients navigate their path to the UK and global opportunities."
+      },
+      "personalised": {
+        "tags": "personalised",
+        "title": "A personalised approach",
+        "description": "No generic advice. Every recommendation is tailored to your unique situation."
+      },
+      "ukExpertise": {
+        "tags": "uk expertise",
+        "title": "Deep UK knowledge",
+        "description": "Expertise in UK education, visa processes, and career opportunities."
+      },
+      "aiInsights": {
+        "tags": "innovation",
+        "title": "AI-enhanced insights",
+        "description": "We use AI tools to provide data-driven career and education recommendations."
+      },
+      "support": {
+        "tags": "support",
+        "title": "End-to-end support",
+        "description": "From your first consultation to settling in, we're with you throughout."
+      }
+    }
+  },
+  "FAQ": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions",
+    "description": "Have a different question? Reach out to us through our contact form below.",
+    "questions": {
+      "whoFor": {
+        "question": "Who is Creopath for?",
+        "answer": "Creopath is for anyone looking to make informed career and education decisions — whether you're a student planning to study in the UK, a professional considering a career change, or someone seeking guidance on skill development and global opportunities."
+      },
+      "doINeedUk": {
+        "question": "Do I need to be in the UK to use your services?",
+        "answer": "Not at all. We work with clients from around the world, including India, Turkey, and many other countries. Our consultations are conducted online, so you can access our guidance from anywhere."
+      },
+      "freeConsultation": {
+        "question": "What does the free consultation include?",
+        "answer": "During your free consultation, we'll discuss your goals, background, and aspirations. We'll give you an honest assessment of your options and outline how we can help you move forward."
+      },
+      "howDifferent": {
+        "question": "How is Creopath different from other consultancies?",
+        "answer": "We combine personalised, one-on-one advisory with AI-powered insights to give you data-driven recommendations. As a small team, you'll work directly with the people guiding your journey — no generic advice, no being passed between departments."
+      },
+      "studyAbroadServices": {
+        "question": "What services do you offer for study abroad?",
+        "answer": "We provide end-to-end support including university selection, application guidance, personal statement review, visa process support, and pre-departure preparation for students planning to study in the UK."
+      },
+      "howMuch": {
+        "question": "How much do your services cost?",
+        "answer": "We offer a free initial consultation. After that, our pricing depends on the scope of services you need. We'll provide a clear breakdown during your first call — no hidden fees or surprises."
+      }
+    }
+  },
+  "Contact": {
+    "eyebrow": "Get In Touch",
+    "title": "Ready to take the next step?",
+    "description": "Book a free consultation and let's discuss how we can help you achieve your career and education goals.",
+    "emailLabel": "Email",
+    "locationLabel": "Location",
+    "locationValue": "London, United Kingdom"
+  },
+  "ContactForm": {
+    "firstNameLabel": "First name",
+    "firstNamePlaceholder": "Your first name",
+    "lastNameLabel": "Last name",
+    "lastNamePlaceholder": "Your last name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "phoneLabel": "Phone",
+    "phoneOptional": "(optional)",
+    "phonePlaceholder": "Enter phone number",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "How can we help?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us about your goals...",
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "submitSuccess": "Message Sent!",
+    "successMessage": "Thank you! We'll get back to you shortly.",
+    "genericError": "Something went wrong. Please try again.",
+    "validation": {
+      "firstNameTooShort": "First name must be at least 2 characters.",
+      "firstNameTooLong": "First name must be at most 50 characters.",
+      "lastNameTooShort": "Last name must be at least 2 characters.",
+      "lastNameTooLong": "Last name must be at most 50 characters.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneInvalid": "Please enter a valid phone number.",
+      "subjectTooShort": "Subject must be at least 3 characters.",
+      "messageTooShort": "Message must be at least 10 characters.",
+      "messageTooLong": "Message must be at most 1000 characters."
+    }
+  },
+  "Footer": {
+    "logoAlt": "Creopath",
+    "tagline": "AI-powered career guidance and education advisory. Helping you make informed decisions for your future.",
+    "navigationHeading": "Navigation",
+    "contactHeading": "Contact",
+    "navigationLabel": "Footer navigation",
+    "locationValue": "London, United Kingdom",
+    "copyright": "© {year} Creopath. All rights reserved."
+  },
+  "LanguageSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "tr": "Türkçe"
+  },
+  "StructuredData": {
+    "businessDescription": "AI-powered career guidance and education advisory company based in London, UK.",
+    "serviceCatalogName": "Career Guidance Services"
+  },
+  "EmailUserConfirmation": {
+    "subject": "We received your message — Creopath",
+    "greeting": "Thanks for reaching out, {name}!",
+    "intro": "We've received your message and one of our team members will get back to you shortly.",
+    "referenceIntro": "For your reference, here's a copy of what you sent:",
+    "subjectLabel": "Subject",
+    "phoneLabel": "Phone",
+    "signoff": "— The Creopath team",
+    "noReplyNote": "This is an automated message from noreply@creopath.com. Please do not reply to this email."
+  }
+}

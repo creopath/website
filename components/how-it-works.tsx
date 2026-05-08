@@ -1,6 +1,8 @@
 "use client"
 
 import { motion } from "motion/react"
+import { useTranslations } from "next-intl"
+
 import { steps } from "@/lib/constants/steps"
 
 const container = {
@@ -17,6 +19,8 @@ const item = {
 }
 
 export default function HowItWorks() {
+  const t = useTranslations("HowItWorks")
+
   return (
     <section id="how-it-works" className="px-4 py-24">
       <div className="mx-auto max-w-7xl">
@@ -28,10 +32,10 @@ export default function HowItWorks() {
         >
           <div className="text-center">
             <p className="text-lg font-bold tracking-wide text-brand-red">
-              How It Works
+              {t("eyebrow")}
             </p>
             <h2 className="mt-2 font-heading text-3xl font-bold text-white sm:text-4xl">
-              Three simple steps to get started
+              {t("title")}
             </h2>
           </div>
 
@@ -44,7 +48,7 @@ export default function HowItWorks() {
           >
             {steps.map((step) => (
               <motion.li
-                key={step.number}
+                key={step.id}
                 variants={item}
                 className="relative"
               >
@@ -52,10 +56,10 @@ export default function HowItWorks() {
                   {step.number}
                 </span>
                 <h3 className="mt-4 font-heading text-xl font-semibold text-white">
-                  {step.title}
+                  {t(`steps.${step.id}.title`)}
                 </h3>
                 <p className="mt-3 leading-relaxed text-white/70">
-                  {step.description}
+                  {t(`steps.${step.id}.description`)}
                 </p>
               </motion.li>
             ))}

@@ -2,9 +2,13 @@
 
 import { motion } from "motion/react"
 import { Mail, MapPin } from "lucide-react"
+import { useTranslations } from "next-intl"
+
 import ContactForm from "@/components/contact-form"
 
 export default function Contact() {
+  const t = useTranslations("Contact")
+
   return (
     <section id="contact" className="px-6 py-24">
       <div className="mx-auto max-w-7xl">
@@ -15,20 +19,19 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-lg font-bold tracking-wide">Get In Touch</p>
+            <p className="text-lg font-bold tracking-wide">{t("eyebrow")}</p>
             <h2 className="mt-2 font-heading text-3xl font-bold text-brand-deep-red sm:text-4xl">
-              Ready to take the next step?
+              {t("title")}
             </h2>
-            <p className="mt-4 text-lg leading-relaxed">
-              Book a free consultation and let&apos;s discuss how we can help
-              you achieve your career and education goals.
-            </p>
+            <p className="mt-4 text-lg leading-relaxed">{t("description")}</p>
 
             <address className="mt-10 space-y-5 not-italic">
               <div className="flex items-center gap-4">
                 <Mail className="size-6 shrink-0 text-brand-deep-red" />
                 <div>
-                  <p className="font-heading text-sm font-semibold">Email</p>
+                  <p className="font-heading text-sm font-semibold">
+                    {t("emailLabel")}
+                  </p>
                   <a
                     href="mailto:info@creopath.com"
                     className="text-base text-muted-foreground transition-colors hover:text-brand-deep-red"
@@ -41,10 +44,10 @@ export default function Contact() {
                 <MapPin className="size-6 shrink-0 text-brand-deep-red" />
                 <div>
                   <p className="font-heading text-sm font-semibold">
-                    Location
+                    {t("locationLabel")}
                   </p>
                   <p className="text-base text-muted-foreground">
-                    London, United Kingdom
+                    {t("locationValue")}
                   </p>
                 </div>
               </div>

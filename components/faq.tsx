@@ -1,15 +1,19 @@
 "use client"
 
 import { motion } from "motion/react"
+import { useTranslations } from "next-intl"
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { faqs } from "@/lib/constants/faqs"
+import { faqIds } from "@/lib/constants/faqs"
 
 export default function FAQ() {
+  const t = useTranslations("FAQ")
+
   return (
     <section id="faq" className="px-4 py-24">
       <div className="mx-auto max-w-4xl">
@@ -21,26 +25,25 @@ export default function FAQ() {
         >
           <div className="text-center">
             <p className="text-lg font-bold tracking-wide text-brand-red">
-              FAQ
+              {t("eyebrow")}
             </p>
             <h2 className="mt-2 font-heading text-3xl font-bold text-white sm:text-4xl">
-              Frequently asked questions
+              {t("title")}
             </h2>
             <p className="mx-auto text-lg mt-4 max-w-xl text-white/70">
-              Have a different question? Reach out to us through our contact
-              form below.
+              {t("description")}
             </p>
           </div>
 
           <div className="mt-12">
             <Accordion type="single" collapsible>
-              {faqs.map((faq) => (
-                <AccordionItem key={faq.question} value={faq.question}>
+              {faqIds.map((id) => (
+                <AccordionItem key={id} value={id}>
                   <AccordionTrigger className="text-left font-heading text-base font-medium text-white **:data-[slot=accordion-trigger-icon]:text-white">
-                    {faq.question}
+                    {t(`questions.${id}.question`)}
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-white/70">
-                    {faq.answer}
+                    {t(`questions.${id}.answer`)}
                   </AccordionContent>
                 </AccordionItem>
               ))}

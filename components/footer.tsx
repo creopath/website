@@ -1,9 +1,14 @@
-import Link from "next/link"
 import Image from "next/image"
+import { useTranslations } from "next-intl"
+
 import { navLinks } from "@/lib/constants/nav"
 import { socialLinks } from "@/lib/constants/social"
+import { Link } from "@/i18n/navigation"
 
 export default function Footer() {
+  const t = useTranslations("Footer")
+  const tNav = useTranslations("Nav")
+
   return (
     <footer className="overflow-hidden px-4 pb-4">
       <div className="relative overflow-hidden rounded-2xl px-8 pb-8 pt-12 sm:px-12 sm:pb-12 lg:px-16 lg:pb-16">
@@ -29,21 +34,20 @@ export default function Footer() {
           <Link href="/">
             <Image
               src="/images/White-Symbol.svg"
-              alt="Creopath"
+              alt={t("logoAlt")}
               width={48}
               height={48}
             />
           </Link>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/60">
-            AI-powered career guidance and education advisory. Helping you
-            make informed decisions for your future.
+            {t("tagline")}
           </p>
         </div>
 
         <div className="mt-8 grid grid-cols-2 gap-8 md:grid-cols-2">
-          <nav aria-label="Footer navigation">
+          <nav aria-label={t("navigationLabel")}>
             <h2 className="font-heading text-sm font-semibold text-white">
-              Navigation
+              {t("navigationHeading")}
             </h2>
             <ul className="mt-3 space-y-2">
               {navLinks.map((link) => (
@@ -52,7 +56,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-sm text-white/60 transition-colors hover:text-white"
                   >
-                    {link.label}
+                    {tNav(link.id)}
                   </Link>
                 </li>
               ))}
@@ -61,7 +65,7 @@ export default function Footer() {
 
           <div>
             <h2 className="font-heading text-sm font-semibold text-white">
-              Contact
+              {t("contactHeading")}
             </h2>
             <address className="mt-3 space-y-2 not-italic">
               <p>
@@ -72,7 +76,7 @@ export default function Footer() {
                   info@creopath.com
                 </a>
               </p>
-              <p className="text-sm text-white/60">London, United Kingdom</p>
+              <p className="text-sm text-white/60">{t("locationValue")}</p>
             </address>
             {socialLinks.length > 0 && (
               <ul className="mt-3 -ml-2.5 flex items-center gap-1">
@@ -96,7 +100,7 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-8">
           <p className="text-center text-sm text-white/60">
-            &copy; {new Date().getFullYear()} Creopath. All rights reserved.
+            {t("copyright", { year: new Date().getFullYear() })}
           </p>
         </div>
       </div>
