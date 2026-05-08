@@ -37,7 +37,7 @@ export async function generateMetadata({
     : routing.defaultLocale
   const t = await getTranslations({ locale, namespace: "Metadata" })
 
-  const baseUrl = "https://creopath.com"
+  const baseUrl = "https://www.creopath.com"
   const canonical =
     locale === routing.defaultLocale ? baseUrl : `${baseUrl}/${locale}`
 

@@ -35,7 +35,7 @@ export default async function Page({
   const tFaq = await getTranslations({ locale, namespace: "FAQ" })
   const tMetadata = await getTranslations({ locale, namespace: "Metadata" })
 
-  const baseUrl = "https://creopath.com"
+  const baseUrl = "https://www.creopath.com"
   const localizedUrl =
     locale === routing.defaultLocale ? baseUrl : `${baseUrl}/${locale}`
 

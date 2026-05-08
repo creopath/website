@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://creopath.com/sitemap.xml",
+    sitemap: "https://www.creopath.com/sitemap.xml",
   }
 }

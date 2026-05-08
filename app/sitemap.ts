@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 
 import { routing } from "@/i18n/routing"
 
-const baseUrl = "https://creopath.com"
+const baseUrl = "https://www.creopath.com"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()
