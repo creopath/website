@@ -66,10 +66,10 @@ export default function Footer() {
             <address className="mt-3 space-y-2 not-italic">
               <p>
                 <a
-                  href="mailto:hello@creopath.com"
+                  href="mailto:info@creopath.com"
                   className="text-sm text-white/60 transition-colors hover:text-white"
                 >
-                  hello@creopath.com
+                  info@creopath.com
                 </a>
               </p>
               <p className="text-sm text-white/60">London, United Kingdom</p>

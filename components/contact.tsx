@@ -30,10 +30,10 @@ export default function Contact() {
                 <div>
                   <p className="font-heading text-sm font-semibold">Email</p>
                   <a
-                    href="mailto:hello@creopath.com"
+                    href="mailto:info@creopath.com"
                     className="text-base text-muted-foreground transition-colors hover:text-brand-deep-red"
                   >
-                    hello@creopath.com
+                    info@creopath.com
                   </a>
                 </div>
               </div>

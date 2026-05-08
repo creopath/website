@@ -30,7 +30,7 @@ const organizationJsonLd = {
   ],
   contactPoint: {
     "@type": "ContactPoint",
-    email: "hello@creopath.com",
+    email: "info@creopath.com",
     contactType: "customer service",
   },
   sameAs: socialLinks.map((link) => link.href),
