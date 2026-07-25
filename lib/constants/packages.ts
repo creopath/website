@@ -25,7 +25,9 @@ export const packages: Package[] = [
     id: "sixMonth",
     theme: "blue",
     featureCount: 4,
-    amount: 0,
+    // PLACEHOLDER price (£450) — update to the real amount and keep in sync
+    // with the Stripe Price referenced by priceIdEnv. Amount is in pence.
+    amount: 45000,
     currency: "GBP",
     priceIdEnv: "STRIPE_PRICE_SIX_MONTH",
   },
@@ -34,13 +36,18 @@ export const packages: Package[] = [
     theme: "purple",
     featured: true,
     featureCount: 4,
-    amount: 0,
+    // PLACEHOLDER price (£800) — update to the real amount and keep in sync
+    // with the Stripe Price referenced by priceIdEnv. Amount is in pence.
+    amount: 80000,
     currency: "GBP",
     priceIdEnv: "STRIPE_PRICE_ONE_YEAR",
   },
 ]
 
-export const packageIds = packages.map((p) => p.id)
+export const packageIds = packages.map((p) => p.id) as [
+  PackageId,
+  ...PackageId[],
+]
 
 export function getPackage(id: string): Package | undefined {
   return packages.find((p) => p.id === id)

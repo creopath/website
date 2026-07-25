@@ -11,6 +11,7 @@
     "services": "Hizmetler",
     "howItWorks": "Nasıl Çalışır",
     "about": "Hakkımızda",
+    "pricing": "Paketler",
     "faq": "SSS",
     "contact": "İletişim"
   },
@@ -167,6 +168,81 @@
     "emailLabel": "E-posta",
     "locationLabel": "Konum",
     "locationValue": "Londra, Birleşik Krallık"
+  },
+  "Pricing": {
+    "eyebrow": "Paketler",
+    "title": "Yolculuğunuza uygun rehberliği seçin",
+    "description": "Yolculuğunuz boyunca sürekli, bire bir danışmanlık. Ne kadar ileriyi planladığınıza uygun paketi seçin.",
+    "perPackage": "tek seferlik",
+    "featuredBadge": "En popüler",
+    "cta": "Başla",
+    "guarantee": "Stripe ile güvenli ödeme. Fiyatlar GBP cinsindendir.",
+    "items": {
+      "sixMonth": {
+        "name": "6 Aylık Rehberlik",
+        "tagline": "Odaklı, kısa vadeli bir hedef için.",
+        "features": "Altı ay boyunca bire bir danışmanlık,Kişiselleştirilmiş kariyer ve eğitim yol haritası,Başvuru ve mülakat desteği,Süreç boyunca e-posta desteği"
+      },
+      "oneYear": {
+        "name": "12 Aylık Rehberlik",
+        "tagline": "Baştan sona eksiksiz bir yolculuk için.",
+        "features": "Tam bir yıl boyunca bire bir danışmanlık,Kişiselleştirilmiş kariyer ve eğitim yol haritası,Uçtan uca başvuru ve kabul desteği,Süreç boyunca öncelikli e-posta desteği"
+      }
+    }
+  },
+  "Checkout": {
+    "title": "Bilgilerinizi tamamlayın",
+    "description": "Bilgilerinizi aşağıya girin. Satın alımınızı tamamlamak için güvenli ödeme sayfamıza yönlendirileceksiniz.",
+    "summaryHeading": "Paketiniz",
+    "perPackage": "tek seferlik",
+    "changePackage": "Paketi değiştir",
+    "invalidPackage": "Bu paket bulunamadı. Devam etmek için lütfen bir paket seçin.",
+    "backToPricing": "Paketleri görüntüle",
+    "securityNote": "Ödemeler Stripe tarafından güvenli şekilde işlenir. Creopath kart bilgilerinizi asla görmez veya saklamaz.",
+    "firstNameLabel": "Ad",
+    "firstNamePlaceholder": "Adınız",
+    "lastNameLabel": "Soyad",
+    "lastNamePlaceholder": "Soyadınız",
+    "emailLabel": "E-posta",
+    "emailPlaceholder": "siz@ornek.com",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "Telefon numaranızı girin",
+    "submit": "Ödemeye devam et",
+    "submitting": "Ödemeye yönlendiriliyor...",
+    "genericError": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+    "validation": {
+      "firstNameTooShort": "Ad en az 2 karakter olmalıdır.",
+      "firstNameTooLong": "Ad en fazla 50 karakter olmalıdır.",
+      "lastNameTooShort": "Soyad en az 2 karakter olmalıdır.",
+      "lastNameTooLong": "Soyad en fazla 50 karakter olmalıdır.",
+      "emailInvalid": "Lütfen geçerli bir e-posta adresi girin.",
+      "phoneInvalid": "Lütfen geçerli bir telefon numarası girin.",
+      "packageInvalid": "Lütfen geçerli bir paket seçin."
+    }
+  },
+  "CheckoutSuccess": {
+    "title": "Satın alımınız için teşekkürler!",
+    "description": "Ödemeniz başarıyla alındı. E-postanıza bir onay gönderdik ve danışmanlarımızdan biri yolculuğunuza başlamak için kısa süre içinde sizinle iletişime geçecek.",
+    "emailNote": "{email} adresine bir onay gönderildi.",
+    "backHome": "Ana sayfaya dön",
+    "missingSession": "Sipariş bilgilerinizi bulamadık, ancak ödemeniz gerçekleştiyse kısa süre içinde bir onay e-postası alacaksınız."
+  },
+  "CheckoutCancelled": {
+    "title": "Ödemeniz iptal edildi",
+    "description": "Herhangi bir ücret alınmadı. Hazır olduğunuzda kaldığınız yerden devam edebilirsiniz.",
+    "retry": "Paketlere dön",
+    "backHome": "Ana sayfaya dön"
+  },
+  "CheckoutEmailConfirmation": {
+    "subject": "Creopath satın alımınız onaylandı",
+    "greeting": "Teşekkürler, {name}!",
+    "intro": "Aramıza katıldığınız için mutluyuz. Ödemeniz alındı ve Creopath ile rehberlik yolculuğunuz onaylandı.",
+    "packageLabel": "Paket",
+    "amountLabel": "Ödenen tutar",
+    "nextStepsIntro": "Sırada ne var:",
+    "nextSteps": "Danışmanlarımızdan biri ilk seansınızı planlamak ve kişiselleştirilmiş planınızı oluşturmaya başlamak için 2 iş günü içinde sizinle iletişime geçecek.",
+    "signoff": "— Creopath ekibi",
+    "noReplyNote": "Bu, noreply@creopath.com adresinden gönderilen otomatik bir mesajdır. Lütfen bu e-postayı yanıtlamayın. Sorularınız için info@creopath.com adresinden bize ulaşabilirsiniz."
   },
   "ContactForm": {
     "firstNameLabel": "Ad",

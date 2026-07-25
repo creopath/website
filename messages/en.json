@@ -11,6 +11,7 @@
     "services": "Services",
     "howItWorks": "How It Works",
     "about": "About",
+    "pricing": "Pricing",
     "faq": "FAQ",
     "contact": "Contact"
   },
@@ -167,6 +168,81 @@
     "emailLabel": "Email",
     "locationLabel": "Location",
     "locationValue": "London, United Kingdom"
+  },
+  "Pricing": {
+    "eyebrow": "Packages",
+    "title": "Choose the guidance that fits your journey",
+    "description": "Ongoing, one-to-one advisory for the length of your journey. Pick the plan that matches how far ahead you're planning.",
+    "perPackage": "one-time",
+    "featuredBadge": "Most popular",
+    "cta": "Get started",
+    "guarantee": "Secure checkout powered by Stripe. Prices in GBP.",
+    "items": {
+      "sixMonth": {
+        "name": "6-Month Guidance",
+        "tagline": "For a focused, near-term goal.",
+        "features": "Six months of one-to-one advisory,Personalised career & education roadmap,Application and interview support,Email support throughout"
+      },
+      "oneYear": {
+        "name": "12-Month Guidance",
+        "tagline": "For a full journey, start to finish.",
+        "features": "A full year of one-to-one advisory,Personalised career & education roadmap,End-to-end application & admissions support,Priority email support throughout"
+      }
+    }
+  },
+  "Checkout": {
+    "title": "Complete your details",
+    "description": "Enter your details below. You'll be taken to our secure payment page to finish your purchase.",
+    "summaryHeading": "Your package",
+    "perPackage": "one-time",
+    "changePackage": "Change package",
+    "invalidPackage": "That package couldn't be found. Please choose a package to continue.",
+    "backToPricing": "View packages",
+    "securityNote": "Payments are securely processed by Stripe. Creopath never sees or stores your card details.",
+    "firstNameLabel": "First name",
+    "firstNamePlaceholder": "Your first name",
+    "lastNameLabel": "Last name",
+    "lastNamePlaceholder": "Your last name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "Enter phone number",
+    "submit": "Continue to payment",
+    "submitting": "Redirecting to payment...",
+    "genericError": "Something went wrong. Please try again.",
+    "validation": {
+      "firstNameTooShort": "First name must be at least 2 characters.",
+      "firstNameTooLong": "First name must be at most 50 characters.",
+      "lastNameTooShort": "Last name must be at least 2 characters.",
+      "lastNameTooLong": "Last name must be at most 50 characters.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneInvalid": "Please enter a valid phone number.",
+      "packageInvalid": "Please choose a valid package."
+    }
+  },
+  "CheckoutSuccess": {
+    "title": "Thank you for your purchase!",
+    "description": "Your payment was successful. We've sent a confirmation to your email, and one of our advisors will be in touch shortly to begin your journey.",
+    "emailNote": "A confirmation has been sent to {email}.",
+    "backHome": "Back to home",
+    "missingSession": "We couldn't find your order details, but if your payment went through you'll receive a confirmation email shortly."
+  },
+  "CheckoutCancelled": {
+    "title": "Your payment was cancelled",
+    "description": "No charge was made. You can pick up where you left off whenever you're ready.",
+    "retry": "Return to packages",
+    "backHome": "Back to home"
+  },
+  "CheckoutEmailConfirmation": {
+    "subject": "Your Creopath purchase is confirmed",
+    "greeting": "Thank you, {name}!",
+    "intro": "We're delighted to have you on board. Your payment has been received and your guidance journey with Creopath is confirmed.",
+    "packageLabel": "Package",
+    "amountLabel": "Amount paid",
+    "nextStepsIntro": "What happens next:",
+    "nextSteps": "One of our advisors will reach out within 2 business days to schedule your first session and start building your personalised plan.",
+    "signoff": "— The Creopath team",
+    "noReplyNote": "This is an automated message from noreply@creopath.com. Please do not reply to this email. If you have any questions, contact us at info@creopath.com."
   },
   "ContactForm": {
     "firstNameLabel": "First name",
