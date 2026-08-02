@@ -1,6 +1,6 @@
 import type { CardTheme } from "@/lib/constants/about"
 
-export type PackageId = "sixMonth" | "oneYear"
+export type PackageId = "threeMonth" | "sixMonth" | "twelveMonth"
 
 export type Package = {
   id: PackageId
@@ -9,6 +9,9 @@ export type Package = {
   featured?: boolean
   // Number of feature bullets in the message catalog under `items.<id>.features`.
   featureCount: number
+  // Access duration in months — used to compute the account expiry date after
+  // a successful payment (purchase date + this many months).
+  durationMonths: number
   // Display price in minor units (pence), formatted per-locale in the UI.
   // This is the LABEL shown on the site. The amount actually charged is
   // determined by the Stripe Price referenced by `priceIdEnv` — keep them in
@@ -17,30 +20,40 @@ export type Package = {
   currency: "GBP"
   // Name of the env var holding the Stripe Price ID for this package.
   // Resolved server-side only (never exposed to the client).
-  priceIdEnv: "STRIPE_PRICE_SIX_MONTH" | "STRIPE_PRICE_ONE_YEAR"
+  priceIdEnv:
+    | "STRIPE_PRICE_THREE_MONTH"
+    | "STRIPE_PRICE_SIX_MONTH"
+    | "STRIPE_PRICE_TWELVE_MONTH"
 }
 
 export const packages: Package[] = [
   {
-    id: "sixMonth",
+    id: "threeMonth",
     theme: "blue",
     featureCount: 4,
-    // PLACEHOLDER price (£450) — update to the real amount and keep in sync
-    // with the Stripe Price referenced by priceIdEnv. Amount is in pence.
-    amount: 45000,
+    durationMonths: 3,
+    amount: 45000, // £450 — must match the Stripe Price at STRIPE_PRICE_THREE_MONTH
+    currency: "GBP",
+    priceIdEnv: "STRIPE_PRICE_THREE_MONTH",
+  },
+  {
+    id: "sixMonth",
+    theme: "deep-red",
+    featured: true,
+    featureCount: 4,
+    durationMonths: 6,
+    amount: 80000, // £800 — must match the Stripe Price at STRIPE_PRICE_SIX_MONTH
     currency: "GBP",
     priceIdEnv: "STRIPE_PRICE_SIX_MONTH",
   },
   {
-    id: "oneYear",
+    id: "twelveMonth",
     theme: "purple",
-    featured: true,
     featureCount: 4,
-    // PLACEHOLDER price (£800) — update to the real amount and keep in sync
-    // with the Stripe Price referenced by priceIdEnv. Amount is in pence.
-    amount: 80000,
+    durationMonths: 12,
+    amount: 145000, // £1,450 — must match the Stripe Price at STRIPE_PRICE_TWELVE_MONTH
     currency: "GBP",
-    priceIdEnv: "STRIPE_PRICE_ONE_YEAR",
+    priceIdEnv: "STRIPE_PRICE_TWELVE_MONTH",
   },
 ]
 

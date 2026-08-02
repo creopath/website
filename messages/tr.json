@@ -178,15 +178,20 @@
     "cta": "Başla",
     "guarantee": "Stripe ile güvenli ödeme. Fiyatlar GBP cinsindendir.",
     "items": {
-      "sixMonth": {
-        "name": "6 Aylık Rehberlik",
+      "threeMonth": {
+        "name": "3 Aylık Kariyer Danışmanlığı",
         "tagline": "Odaklı, kısa vadeli bir hedef için.",
-        "features": "Altı ay boyunca bire bir danışmanlık,Kişiselleştirilmiş kariyer ve eğitim yol haritası,Başvuru ve mülakat desteği,Süreç boyunca e-posta desteği"
+        "features": "Üç ay boyunca bire bir danışmanlık,Kişiselleştirilmiş kariyer ve eğitim yol haritası,Başvuru ve mülakat desteği,Süreç boyunca e-posta desteği"
       },
-      "oneYear": {
-        "name": "12 Aylık Rehberlik",
+      "sixMonth": {
+        "name": "6 Aylık Kariyer Danışmanlığı",
+        "tagline": "Bir dönem boyunca istikrarlı ilerleme için.",
+        "features": "Altı ay boyunca bire bir danışmanlık,Kişiselleştirilmiş kariyer ve eğitim yol haritası,Uçtan uca başvuru ve kabul desteği,Süreç boyunca öncelikli e-posta desteği"
+      },
+      "twelveMonth": {
+        "name": "12 Aylık Kariyer Danışmanlığı",
         "tagline": "Baştan sona eksiksiz bir yolculuk için.",
-        "features": "Tam bir yıl boyunca bire bir danışmanlık,Kişiselleştirilmiş kariyer ve eğitim yol haritası,Uçtan uca başvuru ve kabul desteği,Süreç boyunca öncelikli e-posta desteği"
+        "features": "Tam bir yıl boyunca bire bir danışmanlık,Kişiselleştirilmiş kariyer ve eğitim yol haritası,Uçtan uca başvuru ve kabul desteği,Süreç boyunca öncelikli destek"
       }
     }
   },

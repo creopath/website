@@ -178,15 +178,20 @@
     "cta": "Get started",
     "guarantee": "Secure checkout powered by Stripe. Prices in GBP.",
     "items": {
-      "sixMonth": {
-        "name": "6-Month Guidance",
+      "threeMonth": {
+        "name": "3-Month Career Counselling",
         "tagline": "For a focused, near-term goal.",
-        "features": "Six months of one-to-one advisory,Personalised career & education roadmap,Application and interview support,Email support throughout"
+        "features": "Three months of one-to-one counselling,Personalised career & education roadmap,Application and interview support,Email support throughout"
       },
-      "oneYear": {
-        "name": "12-Month Guidance",
+      "sixMonth": {
+        "name": "6-Month Career Counselling",
+        "tagline": "For steady progress over a term.",
+        "features": "Six months of one-to-one counselling,Personalised career & education roadmap,End-to-end application & admissions support,Priority email support throughout"
+      },
+      "twelveMonth": {
+        "name": "12-Month Career Counselling",
         "tagline": "For a full journey, start to finish.",
-        "features": "A full year of one-to-one advisory,Personalised career & education roadmap,End-to-end application & admissions support,Priority email support throughout"
+        "features": "A full year of one-to-one counselling,Personalised career & education roadmap,End-to-end application & admissions support,Priority support throughout"
       }
     }
   },

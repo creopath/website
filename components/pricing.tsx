@@ -28,7 +28,7 @@ export default function Pricing() {
 
   return (
     <section id="pricing" className="px-6 py-24">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,13 +49,13 @@ export default function Pricing() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-16 grid gap-8 md:grid-cols-2"
+          className="mt-16 grid gap-8 md:grid-cols-3"
         >
           {packages.map((pkg) => {
             const features = t(`items.${pkg.id}.features`).split(",")
 
-            // The featured (12-month) card carries the bold brand color to draw
-            // the eye; the other is a muted light card so it visually recedes.
+            // The featured card carries the bold brand color to draw the eye;
+            // the others are muted light cards so they visually recede.
             const styles = pkg.featured
               ? {
                   card: `${cardThemes[pkg.theme].bg} text-white`,
