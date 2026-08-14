@@ -19,7 +19,29 @@
     "logoAlt": "Creopath",
     "mainNavLabel": "Main navigation",
     "openMenuLabel": "Open menu",
-    "ctaGetStarted": "Get Started"
+    "ctaGetStarted": "Get Started",
+    "login": "Login",
+    "account": "My Account",
+    "logout": "Log out"
+  },
+  "Auth": {
+    "loginTitle": "Welcome back",
+    "loginDescription": "Log in to view your plan and account details.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Your password",
+    "loginButton": "Log in",
+    "loggingIn": "Logging in...",
+    "forgotPassword": "Forgot your password?",
+    "noAccountPrompt": "Don't have an account?",
+    "viewPlans": "View plans",
+    "genericError": "Something went wrong. Please try again.",
+    "validation": {
+      "emailInvalid": "Please enter a valid email address.",
+      "passwordRequired": "Please enter your password.",
+      "invalidCredentials": "Incorrect email or password."
+    }
   },
   "MobileMenu": {
     "logoAlt": "Creopath",

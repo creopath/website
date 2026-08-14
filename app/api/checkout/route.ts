@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { hasLocale } from "next-intl"
 
-import { stripe } from "@/lib/stripe"
+import { getStripe } from "@/lib/stripe"
 import { checkoutSchema } from "@/lib/schemas/checkout"
 import { getPackage } from "@/lib/constants/packages"
 import { routing } from "@/i18n/routing"
@@ -59,7 +59,7 @@ export async function POST(request: Request) {
   const localePrefix = locale === routing.defaultLocale ? "" : `/${locale}`
 
   try {
-    const session = await stripe.checkout.sessions.create({
+    const session = await getStripe().checkout.sessions.create({
       mode: "payment",
       line_items: [{ price: priceId, quantity: 1 }],
       // Stripe needs the email to prefill checkout and send its receipt.

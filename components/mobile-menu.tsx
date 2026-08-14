@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
 import LanguageSwitcher from "@/components/language-switcher"
+import { logout } from "@/lib/auth/actions"
 import { navLinks } from "@/lib/constants/nav"
 import { Link } from "@/i18n/navigation"
 
@@ -48,12 +49,15 @@ const itemVariants = {
 export default function MobileMenu({
   isOpen,
   onClose,
+  loggedIn,
 }: {
   isOpen: boolean
   onClose: () => void
+  loggedIn: boolean
 }) {
   const t = useTranslations("MobileMenu")
   const tNav = useTranslations("Nav")
+  const tHeader = useTranslations("Header")
 
   // Body scroll lock while menu is open
   useEffect(() => {
@@ -153,11 +157,31 @@ export default function MobileMenu({
               className="mt-auto flex flex-col gap-4 pt-8"
             >
               <LanguageSwitcher variant="menu" />
-              <Button asChild size="lg" className="w-full bg-brand-blue">
-                <Link href="#contact" onClick={handleLinkClick}>
-                  {t("ctaGetStarted")}
-                </Link>
-              </Button>
+              {loggedIn ? (
+                <>
+                  <Button asChild size="lg" className="w-full bg-brand-blue">
+                    <Link href="/account" onClick={handleLinkClick}>
+                      {tHeader("account")}
+                    </Link>
+                  </Button>
+                  <form action={logout}>
+                    <Button
+                      type="submit"
+                      size="lg"
+                      variant="outline"
+                      className="w-full"
+                    >
+                      {tHeader("logout")}
+                    </Button>
+                  </form>
+                </>
+              ) : (
+                <Button asChild size="lg" className="w-full bg-brand-blue">
+                  <Link href="/login" onClick={handleLinkClick}>
+                    {tHeader("login")}
+                  </Link>
+                </Button>
+              )}
             </motion.div>
           </motion.nav>
         </motion.div>
