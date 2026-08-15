@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid form data." }, { status: 400 })
   }
 
-  const { email, packageId } = parsed.data
+  const { firstName, lastName, email, phone, address, packageId } = parsed.data
 
   // Resolve the Stripe Price ID server-side from the package the client picked.
   // The browser only ever sends a packageId — never a price or Price ID — so the
@@ -62,15 +62,24 @@ export async function POST(request: Request) {
     const session = await getStripe().checkout.sessions.create({
       mode: "payment",
       line_items: [{ price: priceId, quantity: 1 }],
+      // Always create a Stripe Customer (one-off payments are "guest" by
+      // default). This guarantees session.customer is a real cus_… id that the
+      // webhook stores on the profile — one person, one Stripe customer.
+      customer_creation: "always",
       // Stripe needs the email to prefill checkout and send its receipt.
       customer_email: email,
-      // Personal details (name, phone) are deliberately NOT sent to Stripe — in
-      // the accounts phase they live in Supabase. Only the package reference and
-      // locale ride along, so the webhook knows what was bought and in which
-      // language to confirm it.
+      // Metadata is our own private note bag that Stripe hands back to our
+      // webhook after payment. We carry the signup details here so the webhook
+      // can create the account + profile. This is NOT "billing data for Stripe"
+      // — Stripe never uses these fields; they're just passed through to us.
+      // (No password is ever included — the client sets that themselves later.)
       metadata: {
         packageId,
         locale,
+        firstName,
+        lastName,
+        phone,
+        address,
       },
       success_url: `${siteUrl}${localePrefix}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}${localePrefix}/checkout/cancelled`,

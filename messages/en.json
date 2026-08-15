@@ -234,6 +234,8 @@
     "emailPlaceholder": "you@example.com",
     "phoneLabel": "Phone",
     "phonePlaceholder": "Enter phone number",
+    "addressLabel": "Address",
+    "addressPlaceholder": "Your address",
     "submit": "Continue to payment",
     "submitting": "Redirecting to payment...",
     "genericError": "Something went wrong. Please try again.",
@@ -244,6 +246,8 @@
       "lastNameTooLong": "Last name must be at most 50 characters.",
       "emailInvalid": "Please enter a valid email address.",
       "phoneInvalid": "Please enter a valid phone number.",
+      "addressTooShort": "Please enter your address.",
+      "addressTooLong": "Address must be at most 200 characters.",
       "packageInvalid": "Please choose a valid package."
     }
   },
@@ -266,6 +270,8 @@
     "intro": "We're delighted to have you on board. Your payment has been received and your guidance journey with Creopath is confirmed.",
     "packageLabel": "Package",
     "amountLabel": "Amount paid",
+    "setPasswordIntro": "To access your account, set your password using the button below:",
+    "setPasswordButton": "Set your password",
     "nextStepsIntro": "What happens next:",
     "nextSteps": "One of our advisors will reach out within 2 business days to schedule your first session and start building your personalised plan.",
     "signoff": "— The Creopath team",

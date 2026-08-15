@@ -187,42 +187,54 @@ price changes later, the payment keeps the real figure that was paid at the time
 
 ## Buying a plan — the flow
 
+**Passwords are never collected at checkout, never handled by us, never sent to
+Stripe.** The account is created (email only) after payment, and the client sets
+their own password directly with Supabase via a secure link. This keeps sensitive
+credentials entirely between the client and Supabase.
+
 ### New customer (no account yet)
 
 1. Picks a plan → goes to checkout.
-2. Chooses "New customer", enters **email + password** (this becomes their login).
-3. Enters personal details (first name, last name, phone) — blank form.
-4. Pays on Stripe's secure page.
-5. On success, our server explicitly creates (in code, not a DB trigger): the
-   account, the profile, the Stripe customer (saving its id), and the purchase
-   (with the expiry date). They can now log in.
+2. Enters personal details: first name, last name, email, phone, address —
+   **no password**.
+3. Pays on Stripe's secure page.
+4. On success, the webhook creates (in code): the Stripe customer, the auth
+   account (email only, no password), the profile, and the purchase.
+5. The confirmation email contains a **secure "set your password" link**
+   (a Supabase-generated link). The client clicks it, sets a password directly
+   with Supabase, then logs in normally on the login page.
 
-If the email is already taken, we tell them to log in instead.
+If the email already has an account, we tell them to log in first (below).
 
 ### Returning customer (already has an account)
 
-1. Picks a plan → goes to checkout.
-2. Chooses "Log in", signs in.
-3. Personal details step is shown **pre-filled** — they review and edit if
-   anything changed (e.g. new phone). Edits are saved back to their profile.
-4. Pays. A new purchase row is added; their existing Stripe customer is reused.
+1. Logs in first (via the login page), then picks a plan → checkout.
+2. Personal details are **pre-filled** — they review/edit if anything changed
+   (edits saved back to their profile).
+3. Pays. A new purchase row is added; their existing Stripe customer is reused.
+   No new account or password step — they already have one.
 
-> The only difference between the two: new customers fill a blank details form;
-> returning customers get it pre-filled to confirm or update.
+> Why no password at checkout: the account is created by the webhook *after*
+> payment, and the webhook must never receive a password (Stripe can't carry it,
+> and we don't want to store it). So the client sets their password themselves,
+> after payment, straight with Supabase. Industry-standard for "pay → get access".
 
 ---
 
 ## How "the account is created only after payment" works
 
-The customer types their password on the checkout form *before* paying, but the
-account is created *after* payment succeeds. In between, we briefly hold the
-password:
+No password is involved at checkout, so there's nothing sensitive to hold:
 
-- Payment succeeds → use it to create the account.
-- Payment fails → discard it; no account.
+- **Checkout** collects only email + personal details (no password) and passes
+  them to the payment step.
+- **Payment succeeds** → the webhook creates the account (email only), profile,
+  Stripe customer, and purchase.
+- **Payment fails** → nothing is created; no account.
+- **Password** is set later by the client themselves, via a secure Supabase link
+  in the confirmation email — never collected, held, or seen by us.
 
-(This is the one delicate part to implement carefully — safely holding the
-password across the payment step.)
+So the "account only after payment" rule holds naturally, and the delicate part
+(the password) is delegated entirely to Supabase.
 
 ---
 

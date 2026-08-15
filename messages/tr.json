@@ -234,6 +234,8 @@
     "emailPlaceholder": "siz@ornek.com",
     "phoneLabel": "Telefon",
     "phonePlaceholder": "Telefon numaranızı girin",
+    "addressLabel": "Adres",
+    "addressPlaceholder": "Adresiniz",
     "submit": "Ödemeye devam et",
     "submitting": "Ödemeye yönlendiriliyor...",
     "genericError": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
@@ -244,6 +246,8 @@
       "lastNameTooLong": "Soyad en fazla 50 karakter olmalıdır.",
       "emailInvalid": "Lütfen geçerli bir e-posta adresi girin.",
       "phoneInvalid": "Lütfen geçerli bir telefon numarası girin.",
+      "addressTooShort": "Lütfen adresinizi girin.",
+      "addressTooLong": "Adres en fazla 200 karakter olmalıdır.",
       "packageInvalid": "Lütfen geçerli bir paket seçin."
     }
   },
@@ -266,6 +270,8 @@
     "intro": "Aramıza katıldığınız için mutluyuz. Ödemeniz alındı ve Creopath ile rehberlik yolculuğunuz onaylandı.",
     "packageLabel": "Paket",
     "amountLabel": "Ödenen tutar",
+    "setPasswordIntro": "Hesabınıza erişmek için aşağıdaki düğmeyi kullanarak şifrenizi belirleyin:",
+    "setPasswordButton": "Şifrenizi belirleyin",
     "nextStepsIntro": "Sırada ne var:",
     "nextSteps": "Danışmanlarımızdan biri ilk seansınızı planlamak ve kişiselleştirilmiş planınızı oluşturmaya başlamak için 2 iş günü içinde sizinle iletişime geçecek.",
     "signoff": "— Creopath ekibi",

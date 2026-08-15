@@ -22,6 +22,12 @@ export const checkoutSchema = z.object({
   // Phone is required for checkout (unlike the optional contact-form phone) —
   // advisors need a reliable way to reach paying clients.
   phone: z.string().refine(isValidPhoneNumber, { error: "phoneInvalid" }),
+  // Address is stored in the profile (records / documentation). Required.
+  address: z
+    .string()
+    .trim()
+    .min(5, "addressTooShort")
+    .max(200, "addressTooLong"),
   // Constrained to known package IDs. The server never trusts a price or Stripe
   // Price ID from the client — only this ID, which it maps to a Price server-side.
   packageId: z.enum(packageIds, {

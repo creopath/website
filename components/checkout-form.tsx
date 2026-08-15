@@ -50,6 +50,7 @@ export default function CheckoutForm({
       lastName: "",
       email: "",
       phone: "",
+      address: "",
       packageId,
     },
   })
@@ -199,6 +200,34 @@ export default function CheckoutForm({
                 defaultCountry="GB"
                 placeholder={t("phonePlaceholder")}
                 autoComplete="tel"
+                aria-invalid={fieldState.invalid}
+                className={inputStyles}
+              />
+              {fieldState.invalid ? (
+                <FieldError className="text-white">
+                  {translateValidation(fieldState.error?.message)}
+                </FieldError>
+              ) : null}
+            </Field>
+          )}
+        />
+
+        <Controller
+          name="address"
+          control={form.control}
+          render={({ field, fieldState }) => (
+            <Field data-invalid={fieldState.invalid || undefined}>
+              <FieldLabel
+                htmlFor="checkout-address"
+                className="font-bold text-white"
+              >
+                {t("addressLabel")}
+              </FieldLabel>
+              <Input
+                {...field}
+                id="checkout-address"
+                placeholder={t("addressPlaceholder")}
+                autoComplete="street-address"
                 aria-invalid={fieldState.invalid}
                 className={inputStyles}
               />
